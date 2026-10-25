@@ -55,3 +55,6 @@ Because the Unity Test Framework (NUnit) requires the Unity engine runtime, I co
 
 ---
 *Developed autonomously.*
+## Compilation Fixes Applied
+- Added `Packages/manifest.json` to import `com.unity.xr.interaction.toolkit`, `com.unity.inputsystem`, and `com.unity.textmeshpro` to resolve missing APIs.
+- Added `Assets/Scripts/VVR.asmdef` to ensure C# scripts properly reference these Unity packages.
