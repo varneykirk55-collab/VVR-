@@ -3,9 +3,17 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
+using UnityEditor.XR.Management;
+using UnityEngine.InputSystem.XR;
+using UnityEngine.XR.Management;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Inputs.Readers;
+using UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics;
+using UnityEngine.XR.OpenXR;
+using UnityEngine.XR.OpenXR.Features.Interactions;
+using UnityEngine.XR.OpenXR.Features.MetaQuestSupport;
 using Unity.XR.CoreUtils;
 
 public class VVRVerificationTests
@@ -121,19 +129,16 @@ public class VVRVerificationTests
         sword.baseDamage = 10f;
         sword.damageMultiplier = 2.0f;
 
-        // Invoke Awake & FixedUpdate via reflection to simulate physics step
         InvokePrivateMethod(sword, "Awake");
         sword.SetHeldState(true);
 
         // Rotate sword 90 degrees in place without moving the handle root position!
-        // Root transform.position stays (0,0,0), while tip moves from (0,1,0) to (0,0,1)
         swordObj.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
         InvokePrivateMethod(sword, "FixedUpdate");
 
         Assert.Greater(sword.CurrentVelocity.magnitude, 10f,
             "Rotating the weapon around a stationary handle must produce high velocity at the blade tip.");
 
-        // Verify damage calculation against an EnemyHealth target
         GameObject enemyObj = new GameObject("TestEnemy");
         EnemyHealth enemyHealth = enemyObj.AddComponent<EnemyHealth>();
         enemyHealth.maxHealth = 200f;
@@ -157,7 +162,6 @@ public class VVRVerificationTests
         playerHealth.maxHealth = 100f;
         InvokePrivateMethod(playerHealth, "Awake");
 
-        // Create Shield as a detached root object (as XRGrabInteractable does when grabbed)
         GameObject shieldObj = new GameObject("TestShield");
         shieldObj.AddComponent<Rigidbody>();
         shieldObj.AddComponent<XRGrabInteractable>();
@@ -167,7 +171,6 @@ public class VVRVerificationTests
         InvokePrivateMethod(shield, "Awake");
         InvokePrivateMethod(shield, "OnEnable");
 
-        // Place player at origin and shield facing +Z toward enemy at (0, 0, 2)
         playerObj.transform.position = Vector3.zero;
         shieldObj.transform.position = new Vector3(0f, 1f, 0.4f);
         shieldObj.transform.forward = Vector3.forward;
@@ -188,7 +191,6 @@ public class VVRVerificationTests
         enemyWeapon.EnableDamage();
 
         InvokePrivateMethod(enemyWeapon, "OnTriggerEnter", playerCol);
-        // 20 damage * 0.2 multiplier = 4 damage -> 96 health remaining
         Assert.AreEqual(96f, playerHealth.currentHealth, 0.01f,
             "Blocked enemy attack should deal only 20% damage (4 HP).");
 
@@ -196,7 +198,6 @@ public class VVRVerificationTests
         shieldObj.transform.forward = Vector3.right;
         enemyWeapon.EnableDamage();
         InvokePrivateMethod(enemyWeapon, "OnTriggerEnter", playerCol);
-        // Full 20 damage -> 76 health remaining
         Assert.AreEqual(76f, playerHealth.currentHealth, 0.01f,
             "Attack outside the shield's facing cone must deal full damage (20 HP).");
 
@@ -223,25 +224,20 @@ public class VVRVerificationTests
         int waveEndCount = 0;
         wm.OnWaveEnd.AddListener(() => waveEndCount++);
 
-        // Simulate Wave 1 starting with 3 enemies to spawn
         SetPrivateField(wm, "currentWave", 1);
         SetPrivateField(wm, "isWaveActive", true);
         SetPrivateField(wm, "isTransitioningWave", false);
         SetPrivateField(wm, "enemiesRemainingToSpawn", 3);
         SetPrivateField(wm, "enemiesAlive", 0);
 
-        // Spawn Enemy #1 (2 remaining to spawn)
         GameObject e1 = wm.SpawnEnemy();
         SetPrivateField(wm, "enemiesRemainingToSpawn", 2);
 
-        // Player kills Enemy #1 immediately before Enemy #2 spawns!
         wm.EnemyDefeated();
 
-        // CRITICAL REGRESSION CHECK: Wave must NOT end prematurely while 2 enemies remain to spawn
         Assert.AreEqual(0, waveEndCount, "Wave must not end while enemiesRemainingToSpawn > 0.");
         Assert.IsTrue(wm.IsWaveActive, "Wave must remain active while more enemies are queued to spawn.");
 
-        // Spawn Enemy #2 and #3 (0 remaining to spawn)
         GameObject e2 = wm.SpawnEnemy();
         SetPrivateField(wm, "enemiesRemainingToSpawn", 1);
         GameObject e3 = wm.SpawnEnemy();
@@ -249,7 +245,6 @@ public class VVRVerificationTests
 
         Assert.AreEqual(2, wm.EnemiesAlive);
 
-        // Defeat Enemy #2 and #3
         wm.EnemyDefeated();
         Assert.AreEqual(0, waveEndCount, "Wave must not end while 1 enemy is still alive.");
 
@@ -308,6 +303,117 @@ public class VVRVerificationTests
         Assert.GreaterOrEqual((int)PlayerSettings.Android.minSdkVersion, 29, "Quest 2 OpenXR requires Android Min SDK >= 29.");
         Assert.AreEqual(AndroidArchitecture.ARM64, PlayerSettings.Android.targetArchitectures, "Quest 2 requires ARM64 architecture.");
         Assert.AreEqual("Enemy", LayerMask.LayerToName(8), "Layer 8 must be configured as 'Enemy'.");
+        Assert.AreEqual("Weapon", LayerMask.LayerToName(9), "Layer 9 must be configured as 'Weapon'.");
+        Assert.AreEqual("Player", LayerMask.LayerToName(10), "Layer 10 must be configured as 'Player'.");
+    }
+
+    [Test]
+    public void Test08_Quest2Controllers_SelectActivateHapticsAndTrackingConfigured()
+    {
+        EditorSceneManager.OpenScene("Assets/Scenes/VikingArena.unity", OpenSceneMode.Single);
+
+        XROrigin xrOrigin = Object.FindAnyObjectByType<XROrigin>();
+        Assert.IsNotNull(xrOrigin);
+
+        TrackedPoseDriver hmdTpd = xrOrigin.Camera.GetComponent<TrackedPoseDriver>();
+        Assert.IsNotNull(hmdTpd, "Main Camera must have TrackedPoseDriver.");
+        Assert.IsNotNull(hmdTpd.positionInput.action, "HMD position action must be assigned.");
+        Assert.Greater(hmdTpd.positionInput.action.bindings.Count, 0, "HMD position action must have bindings.");
+        Assert.IsNotNull(hmdTpd.rotationInput.action, "HMD rotation action must be assigned.");
+        Assert.Greater(hmdTpd.rotationInput.action.bindings.Count, 0, "HMD rotation action must have bindings.");
+
+        XRDirectInteractor[] interactors = xrOrigin.GetComponentsInChildren<XRDirectInteractor>(true);
+        Assert.AreEqual(2, interactors.Length);
+
+        foreach (XRDirectInteractor interactor in interactors)
+        {
+            TrackedPoseDriver controllerTpd = interactor.GetComponent<TrackedPoseDriver>();
+            Assert.IsNotNull(controllerTpd, $"{interactor.name} must have TrackedPoseDriver.");
+            Assert.Greater(controllerTpd.positionInput.action.bindings.Count, 0);
+            Assert.Greater(controllerTpd.rotationInput.action.bindings.Count, 0);
+
+            Assert.AreEqual(XRInputButtonReader.InputSourceMode.InputAction, interactor.selectInput.inputSourceMode,
+                $"{interactor.name} selectInput must use direct InputAction mode.");
+            Assert.IsNotNull(interactor.selectInput.inputActionPerformed, $"{interactor.name} selectInput action must be assigned.");
+            Assert.Greater(interactor.selectInput.inputActionPerformed.bindings.Count, 0, $"{interactor.name} selectInput must bind to gripPressed.");
+
+            Assert.AreEqual(XRInputButtonReader.InputSourceMode.InputAction, interactor.activateInput.inputSourceMode,
+                $"{interactor.name} activateInput must use direct InputAction mode.");
+            Assert.IsNotNull(interactor.activateInput.inputActionPerformed);
+            Assert.Greater(interactor.activateInput.inputActionPerformed.bindings.Count, 0);
+
+            HapticImpulsePlayer hapticPlayer = interactor.GetComponent<HapticImpulsePlayer>();
+            Assert.IsNotNull(hapticPlayer, $"{interactor.name} must have HapticImpulsePlayer for Quest 2 haptics.");
+            Assert.AreEqual(XRInputHapticImpulseProvider.InputSourceMode.InputAction, hapticPlayer.hapticOutput.inputSourceMode);
+            Assert.IsNotNull(hapticPlayer.hapticOutput.inputAction);
+            Assert.Greater(hapticPlayer.hapticOutput.inputAction.bindings.Count, 0);
+        }
+    }
+
+    [Test]
+    public void Test09_Weapons_ReachableAndHaveValidAttachTransforms()
+    {
+        EditorSceneManager.OpenScene("Assets/Scenes/VikingArena.unity", OpenSceneMode.Single);
+
+        XROrigin xrOrigin = Object.FindAnyObjectByType<XROrigin>();
+        Vector3 playerOrigin = xrOrigin.transform.position;
+
+        Weapon[] weapons = new Weapon[]
+        {
+            Object.FindAnyObjectByType<Sword>(),
+            Object.FindAnyObjectByType<Axe>(),
+            Object.FindAnyObjectByType<Shield>()
+        };
+
+        foreach (Weapon w in weapons)
+        {
+            Assert.IsNotNull(w);
+            Vector2 flatPlayer = new Vector2(playerOrigin.x, playerOrigin.z);
+            Vector2 flatWeapon = new Vector2(w.transform.position.x, w.transform.position.z);
+            float horizontalReachDistance = Vector2.Distance(flatPlayer, flatWeapon);
+
+            Assert.LessOrEqual(horizontalReachDistance, 0.72f,
+                $"{w.name} horizontal distance ({horizontalReachDistance:F2}m) must be within comfortable Quest 2 arm reach (<= 0.72m).");
+            Assert.GreaterOrEqual(w.transform.position.y, 0.75f, $"{w.name} height must be above waist level.");
+            Assert.LessOrEqual(w.transform.position.y, 1.15f, $"{w.name} height must be below shoulder level.");
+
+            XRGrabInteractable grab = w.GetComponent<XRGrabInteractable>();
+            Assert.IsNotNull(grab);
+            Assert.IsNotNull(grab.attachTransform, $"{w.name} must have an explicit attachTransform for ergonomic Quest 2 controller grip.");
+        }
+
+        Assert.IsTrue(Physics.GetIgnoreLayerCollision(9, 10),
+            "Weapon layer (9) and Player layer (10) collision must be ignored so the player body collider never pushes held weapons.");
+    }
+
+    [Test]
+    public void Test10_OpenXRAndXRManagement_ConfiguredForStandaloneAndAndroid()
+    {
+        XRGeneralSettingsPerBuildTarget perBuildTarget = AssetDatabase.LoadAssetAtPath<XRGeneralSettingsPerBuildTarget>("Assets/XR/XRGeneralSettingsPerBuildTarget.asset");
+        Assert.IsNotNull(perBuildTarget, "XRGeneralSettingsPerBuildTarget.asset must exist.");
+
+        BuildTargetGroup[] groups = new[] { BuildTargetGroup.Standalone, BuildTargetGroup.Android };
+        foreach (BuildTargetGroup group in groups)
+        {
+            XRGeneralSettings general = perBuildTarget.SettingsForBuildTarget(group);
+            Assert.IsNotNull(general, $"XRGeneralSettings must exist for {group}.");
+            Assert.IsTrue(general.InitManagerOnStart, $"InitManagerOnStart must be true for {group}.");
+            Assert.IsNotNull(general.Manager, $"XRManagerSettings must exist for {group}.");
+            Assert.Greater(general.Manager.activeLoaders.Count, 0, $"OpenXRLoader must be assigned in activeLoaders for {group}.");
+
+            OpenXRSettings openXr = OpenXRSettings.GetSettingsForBuildTargetGroup(group);
+            Assert.IsNotNull(openXr, $"OpenXRSettings must exist for {group}.");
+            Assert.AreEqual(OpenXRSettings.RenderMode.SinglePassInstanced, openXr.renderMode);
+
+            OculusTouchControllerProfile touchProfile = openXr.GetFeature<OculusTouchControllerProfile>();
+            Assert.IsNotNull(touchProfile, $"OculusTouchControllerProfile must exist for {group}.");
+            Assert.IsTrue(touchProfile.enabled, $"OculusTouchControllerProfile must be enabled for {group}.");
+        }
+
+        OpenXRSettings androidOpenXr = OpenXRSettings.GetSettingsForBuildTargetGroup(BuildTargetGroup.Android);
+        MetaQuestFeature metaQuest = androidOpenXr.GetFeature<MetaQuestFeature>();
+        Assert.IsNotNull(metaQuest, "MetaQuestFeature must exist on Android OpenXRSettings.");
+        Assert.IsTrue(metaQuest.enabled, "MetaQuestFeature must be enabled on Android OpenXRSettings.");
     }
 
     private static void InvokePrivateMethod(object target, string methodName, params object[] args)

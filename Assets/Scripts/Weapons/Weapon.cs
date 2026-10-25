@@ -48,6 +48,13 @@ public class Weapon : MonoBehaviour
 
         Transform refTransform = GetVelocityReferenceTransform();
         previousPosition = refTransform != null ? refTransform.position : transform.position;
+
+        int weaponLayer = LayerMask.NameToLayer("Weapon");
+        int playerLayer = LayerMask.NameToLayer("Player");
+        if (weaponLayer >= 0 && playerLayer >= 0)
+        {
+            Physics.IgnoreLayerCollision(weaponLayer, playerLayer, true);
+        }
     }
 
     protected virtual void OnEnable()

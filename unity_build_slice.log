@@ -1,24 +1,24 @@
-VBCSCompilerPreWarmer: watching VBCSCompiler (PID 18768)
-VBCSCompilerPreWarmer: pre-warm launched (dotnet PID 19776)
-VBCSCompiler prewarm took 73.00 ms
+VBCSCompilerPreWarmer: watching VBCSCompiler (PID 10556)
+VBCSCompilerPreWarmer: pre-warm launched (dotnet PID 15192)
+VBCSCompiler prewarm took 65.49 ms
 [Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-aresg" at "2026-10-25T20:58:59.0570296Z"
 Built from '6000.6/staging' branch; Version is '6000.6.6f1 (d20c9ac777da) revision 13765786'; Using compiler version '194234433'; Build Type 'Release'
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-aresg" at "2026-10-25T19:28:31.6028803Z"
 OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'en' Physical Memory: 15260 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
-Date: 2026-10-25T19:28:31Z
+Date: 2026-10-25T20:58:59Z
 [Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 3504, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.18.3+d7ffd15
-  Session Id:              135279015d4046c3812a1fa2dae0dc11
+  Session Id:              6d48c334acfc4be1ae44ce81744cced7
   Correlation Id:          d55341c18cef510aff8e4f530a9f70c9
-  External correlation Id: 3070789965589595828
+  External correlation Id: 6489713529047499583
   Machine Id:              PB5tqFovrKKcVs56eU1+i2663cw=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-aresg" (connect: 0.00s, validation: 0.00s, handshake: 0.09s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-aresg-notifications" at "2026-10-25T19:28:31.6920611Z"
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-aresg" (connect: 0.00s, validation: 0.01s, handshake: 0.37s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-aresg-notifications" at "2026-10-25T20:58:59.4314415Z"
 [Licensing::Module] Error: Access token is unavailable; failed to update
 [Licensing::Client] Successfully resolved entitlement details
 [Licensing::Module] License group:
@@ -28,7 +28,7 @@ Date: 2026-10-25T19:28:31Z
   Expiration: Unlimited
 [Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
 [Licensing::Client] Successfully resolved entitlement details
-[Licensing::Module] Licensing Background thread has ended after 0.10s
+[Licensing::Module] Licensing Background thread has ended after 0.41s
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.6.6f1\Editor\Unity.exe
@@ -80,21 +80,21 @@ C:/Users/aresg/.gemini/antigravity/scratch/VVR-Arena
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
 Logging is directed to a specific file, skipping project log.
-Player connection [10556]  Target information:
+Player connection [9496]  Target information:
 
-Player connection [10556]  * "[IP] 10.0.0.162 [Port] 55505 [Flags] 2 [Guid] 3534224517 [EditorId] 3534224517 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-KEGHEQSN) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [9496]  * "[IP] 10.0.0.162 [Port] 55504 [Flags] 2 [Guid] 266209529 [EditorId] 266209529 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-KEGHEQSN) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [10556] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [10556] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [9496] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [9496] Host joined alternative multi-casting on [225.0.0.222:34997]...
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
 [Physics::Module] Id: 0xdecafbad
-[Package Manager] Connected to IPC stream "Upm-9976" after 0.6 seconds.
+[Package Manager] Connected to IPC stream "Upm-14412" after 0.2 seconds.
 [Licensing::Client] Successfully resolved entitlement details
 Library Redirect Path: Library/
 Launching Unity Data Store - C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/Tools/Unity.DataStore.exe 
 Unity Data Store artifact dir = Library/DataStore, working dir = C:/Users/aresg/.gemini/antigravity/scratch/VVR-ArenaUnity Data Store running and initialised
-Refreshing native plugins compatible for Editor in 2.35 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 3.11 ms, found 0 plugins.
 [Physics::Module] Selected backend (deferred post-plugins).
 [Physics::Module] Name: PhysX
 [Physics::Module] Id: 0xf2b8ea05
@@ -117,7 +117,7 @@ Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/Managed
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/BCLExtensions/runtime/netstandard2.1'
 Mono path[2] = 'C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56976
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56412
 CodeReloadManager initialized
 ImportWorker Server TCP listen port: 0
 AcceleratorClientConnectionCallback - disconnected - :0
@@ -125,31 +125,31 @@ Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007515 seconds.
+Registered in 1.343614 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Package Manager log level set to [2]
-ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:False
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Scripting: successfully reloaded assembly
-- Finished resetting the current domain, in  1.825 seconds
-Domain Reload Profiling: 3382ms
-	BeginReloadAssembly (376ms)
-		CreateAndSetChildDomain (10ms)
-	RebuildCommonClasses (15ms)
-	RebuildNativeTypeToScriptingClass (41ms)
-	initialDomainReloadingComplete (197ms)
-	LoadAllAssembliesAndSetupDomain (925ms)
-		LoadAssemblies (357ms)
-		TypeCache.Refresh (633ms)
-			TypeCache.ScanAssembly (601ms)
+- Finished resetting the current domain, in  4.673 seconds
+Domain Reload Profiling: 12227ms
+	BeginReloadAssembly (796ms)
+		CreateAndSetChildDomain (5ms)
+	RebuildCommonClasses (12ms)
+	RebuildNativeTypeToScriptingClass (675ms)
+	initialDomainReloadingComplete (2052ms)
+	LoadAllAssembliesAndSetupDomain (4018ms)
+		LoadAssemblies (795ms)
+		TypeCache.Refresh (3699ms)
+			TypeCache.ScanAssembly (3028ms)
 		AnalyzeDomain (1ms)
-	FinalizeReload (1828ms)
+	FinalizeReload (4675ms)
 		SetupLoadedEditorAssemblies (0ms)
-			LogAssemblyErrors (3ms)
-			InitializePlatformSupportModulesInManaged (10ms)
-			BeforeProcessingInitializeOnLoad (300ms)
-			ProcessInitializeOnLoadAttributes (289ms)
-			ProcessInitializeOnLoadMethodAttributes (661ms)
+			LogAssemblyErrors (4ms)
+			InitializePlatformSupportModulesInManaged (8ms)
+			BeforeProcessingInitializeOnLoad (307ms)
+			ProcessInitializeOnLoadAttributes (284ms)
+			ProcessInitializeOnLoadMethodAttributes (1762ms)
 [Licensing::Client] Successfully resolved entitlement details
 Application.AssetDatabase Initial Refresh Start
 [Package Manager] Restoring resolved packages state from cache
@@ -218,13 +218,28 @@ Application.AssetDatabase Initial Refresh Start
 [Subsystems] 1 'inputs' descriptors matched in Library/PackageCache/com.unity.xr.openxr@b5b77b4027be/Runtime/UnitySubsystemsManifest.json
 [Subsystems] 1 'displays' descriptors matched in Library/PackageCache/com.unity.xr.openxr@b5b77b4027be/Runtime/UnitySubsystemsManifest.json
 [Subsystems] No descriptors matched for  meshings in Library/PackageCache/com.unity.xr.openxr@b5b77b4027be/Runtime/UnitySubsystemsManifest.json.
-[Package Manager] Done registering packages in 0.06 seconds
+[Package Manager] Done registering packages in 0.08 seconds
+AcceleratorClientConnectionCallback - disconnected - :0
+[ScriptCompilation] Requested script compilation because: Assembly Definition File(s) changed
 [ScriptCompilation] Requested script compilation because: AssetDatabase observed changes in script compilation related files
 Starting: C:\Program Files\Unity\Hub\Editor\6000.6.6f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
 WorkingDir: C:/Users/aresg/.gemini/antigravity/scratch/VVR-Arena
 DisplayProgressbar: Compiling Scripts
-ExitCode: 0 Duration: 3s839ms
-[546/697    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+Starting: C:\Program Files\Unity\Hub\Editor\6000.6.6f1\Editor\Data\DotNetSdk\dotnet.exe "C:\Program Files\Unity\Hub\Editor\6000.6.6f1\Editor\Data\Tools\BuildPipeline\ScriptCompilationBuildProgram.exe" "Library/Bee/1900b0aE.dag.json" "Library/Bee/1900b0aE-inputdata.json" "Library\Bee\buildprogram0.traceevents"
+WorkingDir: C:/Users/aresg/.gemini/antigravity/scratch/VVR-Arena
+ExitCode: 4 Duration: 1s890ms
+Rebuilding DAG because FileSignature timestamp changed: Library/Bee/1900b0aE-inputdata.json
+*** Tundra requires additional run (1.76 seconds), 0 items updated, 51 evaluated
+ExitCode: 0 Duration: 5s287ms
+Starting: C:\Program Files\Unity\Hub\Editor\6000.6.6f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --dagfilejson="Library\Bee\1900b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/aresg/.gemini/antigravity/scratch/VVR-Arena
+ExitCode: 0 Duration: 8s654ms
+Finished compiling graph: 700 nodes, 12183 flattened edges (10607 ToBuild, 102 ToUse), maximum node priority 753
+[307/697    0s] WriteText Library/Bee/artifacts/1900b0aE.dag/VVRTests.dll.mvfrm.rsp
+[372/697    0s] WriteText Library/Bee/artifacts/1900b0aE.dag/VVRTests.rsp
+[416/697    0s] WriteResponseFile Library/Bee/artifacts/rsp/11483798120306958225.rsp
+[545/697    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[684/697    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1900b0aE.dag/VVRTests.dll.mvfrm
 [685/697    1s] Csc Library/Bee/artifacts/1900b0aE.dag/VVR.dll (+2 others)
 [686/697    0s] ILPostProcess Library/Bee/artifacts/1900b0aE.dag/post-processed/VVR.dll (+pdb)
 Processing assembly Library/Bee/artifacts/1900b0aE.dag/VVR.dll, with 149 defines and 299 references
@@ -234,7 +249,7 @@ processors: zzzUnity.Burst.CodeGen.BurstILPostProcessor
 1 processor(s) skipped this assembly
 [687/697    0s] CopyFiles Library/ScriptAssemblies/VVR.pdb
 [688/697    0s] CopyFiles Library/ScriptAssemblies/VVR.dll
-[689/697    1s] Csc Library/Bee/artifacts/1900b0aE.dag/VVREditor.dll (+2 others)
+[689/697    4s] Csc Library/Bee/artifacts/1900b0aE.dag/VVREditor.dll (+2 others)
 [690/697    0s] ILPostProcess Library/Bee/artifacts/1900b0aE.dag/post-processed/VVREditor.dll (+pdb)
 Processing assembly Library/Bee/artifacts/1900b0aE.dag/VVREditor.dll, with 147 defines and 316 references
 
@@ -242,173 +257,134 @@ processors: zzzUnity.Burst.CodeGen.BurstILPostProcessor
 
 1 processor(s) skipped this assembly
 [691/697    0s] CopyFiles Library/ScriptAssemblies/VVREditor.pdb
-[692/697    0s] CopyFiles Library/ScriptAssemblies/VVREditor.dll
-[693/697    0s] Csc Library/Bee/artifacts/1900b0aE.dag/VVRTests.dll (+2 others)
+[692/697    0s] Csc Library/Bee/artifacts/1900b0aE.dag/VVRTests.dll (+2 others)
+[693/697    0s] CopyFiles Library/ScriptAssemblies/VVREditor.dll
 [694/697    0s] ILPostProcess Library/Bee/artifacts/1900b0aE.dag/post-processed/VVRTests.dll (+pdb)
-Processing assembly Library/Bee/artifacts/1900b0aE.dag/VVRTests.dll, with 147 defines and 309 references
+Processing assembly Library/Bee/artifacts/1900b0aE.dag/VVRTests.dll, with 147 defines and 313 references
 
 processors: zzzUnity.Burst.CodeGen.BurstILPostProcessor
 
 1 processor(s) skipped this assembly
 [695/697    0s] CopyFiles Library/ScriptAssemblies/VVRTests.pdb
 [696/697    0s] CopyFiles Library/ScriptAssemblies/VVRTests.dll
-*** Tundra build success (3.73 seconds), 13 items updated, 697 evaluated
-Total cache size 89031556
-Total cache size after purge 89031556, took 00:00:00.5383520
-AssetDatabase: script compilation time: 5.996732s
+*** Tundra build success (8.58 seconds), 17 items updated, 697 evaluated
+AssetDatabase: script compilation time: 18.894292s
 Begin MonoManager ReloadAssembly
 Importing 'GUID: 00000000000000003000000000000000 - Path: ProjectSettings/TagManager.asset' with importer (LibraryAssetImporter)
-Imported 'GUID: 00000000000000003000000000000000' -> (Import Result ID: '4807e5b396e7dab49be2f785e1ff65ea') in 0.780 seconds [static dependencies only]. Details - ImportResultOutputID=f000288eab4d423778547d37d97a06b9 DependenciesID=82b51db80ce88107c7360c01c37cd6f4 StaticDependenciesID=4b169854f00f577748a293eb7266bd9b 
-Importing 'GUID: 00000000000000004000000000000000 - Path: ProjectSettings/ProjectSettings.asset' with importer (LibraryAssetImporter)
-Imported 'GUID: 00000000000000004000000000000000' -> (Import Result ID: 'f4d40db40e546623f41eee872b456b5d') in 0.003 seconds [static dependencies only]. Details - ImportResultOutputID=054c890a8f4b6dddbea933bc5e4b7df4 DependenciesID=b34c8ec9a591db6b650ec613e9581721 StaticDependenciesID=a77a0011584007c9bcdff8de084be141 
-Importing 'GUID: 00000000000000007000000000000000 - Path: ProjectSettings/TimeManager.asset' with importer (LibraryAssetImporter)
-Imported 'GUID: 00000000000000007000000000000000' -> (Import Result ID: 'd8ab53de05c628386cc8d458a6d573f1') in 0.003 seconds [static dependencies only]. Details - ImportResultOutputID=888360dbe4cb337dfbc4897083ee474b DependenciesID=b4a4a63f4e801999e5877da1b6822bbe StaticDependenciesID=a81eae43f7830555fd387e038e01d093 
-Importing 'GUID: 00000000000000009000000000000000 - Path: ProjectSettings/QualitySettings.asset' with importer (LibraryAssetImporter)
-Imported 'GUID: 00000000000000009000000000000000' -> (Import Result ID: 'de8b8de84a6fc9b04f03c36ea42d921c') in 0.003 seconds [static dependencies only]. Details - ImportResultOutputID=2a108b3da874f726c62fbe5f12be4a8a DependenciesID=6fedbee749fd5029fb06b60f4c05d569 StaticDependenciesID=de43f0d64c7454a1e5296cb0da17c373 
-Importing 'GUID: 90f6c64548633be4f80be896ec2ef026 - Path: Assets/Scripts' with importer (DefaultImporter)
-Imported 'GUID: 90f6c64548633be4f80be896ec2ef026' -> (Import Result ID: 'edcf0503e0953800b3f9b5787ef6d370') in 0.023 seconds [static dependencies only]. Details - ImportResultOutputID=d3f9e6ae175f4400fa5bc7bccd48cdc9 DependenciesID=1cb7742edddbaae3c486760004039c04 StaticDependenciesID=6d8b0cd50510c0980599125029c7b9d7 
-Importing 'GUID: d8c59e155e94d2041900cf6672fcae5c - Path: Assets/Editor' with importer (DefaultImporter)
-Imported 'GUID: d8c59e155e94d2041900cf6672fcae5c' -> (Import Result ID: '09922f38f0c181666366eb31e8938ca6') in 0.023 seconds [static dependencies only]. Details - ImportResultOutputID=39227730495193ae6f1c3918162d6daa DependenciesID=84f104c43046f7afd3a04a9a51ad1a1e StaticDependenciesID=b2c342647397e1e31cae9316d7324ef9 
-Importing 'GUID: 3d2a9d6ee672df440af4a13954f2c9a0 - Path: Assets/Tests' with importer (DefaultImporter)
-Imported 'GUID: 3d2a9d6ee672df440af4a13954f2c9a0' -> (Import Result ID: 'fa413b74680d87d98adcc00f30edc97b') in 0.017 seconds [static dependencies only]. Details - ImportResultOutputID=fe13c515ab1dc0730db1804dc069c67c DependenciesID=37324e4b4d2f4e96b49c0c87fc0e12a7 StaticDependenciesID=27336b94092b3d403151375433f7bf34 
-Importing 'GUID: 81534fd8e947d934f81f63f248f8df89 - Path: Assets/Tests/Editor' with importer (DefaultImporter)
-Imported 'GUID: 81534fd8e947d934f81f63f248f8df89' -> (Import Result ID: 'f3c974676e8f62c4275b56b54a7746e1') in 0.019 seconds [static dependencies only]. Details - ImportResultOutputID=a6733583e313d430c25fbeff41ca382d DependenciesID=0181724589b55f420e362e7ad3b8540c StaticDependenciesID=394d714abd175637727930f474bf2d9a 
-Importing 'GUID: 6496ba65a4a012f4590560dec1ceaffa - Path: Assets/Scripts/Managers' with importer (DefaultImporter)
-Imported 'GUID: 6496ba65a4a012f4590560dec1ceaffa' -> (Import Result ID: 'c186228940ee826b63ac715a791a7567') in 0.006 seconds [static dependencies only]. Details - ImportResultOutputID=ad408412efffb7429c603bab5678a8e8 DependenciesID=5cc2d3ecc5ea0caff3645eabaf92adea StaticDependenciesID=ec21e57aa51feb15af26be76501e0d12 
-Importing 'GUID: 397e0d3d0ef708646af25ee61d68665a - Path: Assets/Scripts/Player' with importer (DefaultImporter)
-Imported 'GUID: 397e0d3d0ef708646af25ee61d68665a' -> (Import Result ID: '9ebe15dc13db8f0bb35bc6b46205223d') in 0.007 seconds [static dependencies only]. Details - ImportResultOutputID=09d7a191bd7403cf7e337604720b9394 DependenciesID=bbda5a6a7882b48831809cddd1ad9718 StaticDependenciesID=bd30a4d5d433698848640fede8d41d2f 
-Importing 'GUID: caa007c8f12d62f42bf9c3e10544d81b - Path: Assets/Scripts/Weapons' with importer (DefaultImporter)
-Imported 'GUID: caa007c8f12d62f42bf9c3e10544d81b' -> (Import Result ID: '2d7869cce44a3b50be1e08038a286fbf') in 0.017 seconds [static dependencies only]. Details - ImportResultOutputID=61b01502f45f5083f9d838a0dd21eed7 DependenciesID=01e2ce9b2a9644b7f6ec0c00d596bc83 StaticDependenciesID=7877d1cf976f8f0fc68f4fe89212c5a9 
-Importing 'GUID: de958a73b6adf9349bc4568281f119ce - Path: Assets/Scripts/Enemy' with importer (DefaultImporter)
-Imported 'GUID: de958a73b6adf9349bc4568281f119ce' -> (Import Result ID: '8de4eff233dfc37b551462e631eb40ea') in 0.006 seconds [static dependencies only]. Details - ImportResultOutputID=cf20efb4de5a1530d0575aefdf89dea8 DependenciesID=dee5e4507e7f7122abc514a35cd762f3 StaticDependenciesID=ab0bb2e734961a5b1a0f5341bbd61695 
+Imported 'GUID: 00000000000000003000000000000000' -> (Import Result ID: 'b831162086fa1435fb77843c61220417') in 0.134 seconds [static dependencies only]. Details - ImportResultOutputID=f000288eab4d423778547d37d97a06b9 DependenciesID=5f1fe56767bf6b79aa7348d50d89a834 StaticDependenciesID=7169cf7ef76dd6f3b4007591d59eddae 
 Importing 'GUID: 907426946d47e52478ef6859cbf64652 - Path: Assets/Tests/Editor/VVRTests.asmdef' with importer (AssemblyDefinitionImporter)
-Imported 'GUID: 907426946d47e52478ef6859cbf64652' -> (Import Result ID: '19a63c3f12152ab2f82a029be830b5e3') in 0.017 seconds [static dependencies only]. Details - ImportResultOutputID=b5aefe5f7c8134c218fc96ce0cb84bef DependenciesID=985b03d580f1a36d2a80808f42eb1ae2 StaticDependenciesID=6d5fc442c6f0998ce41765a7fb5c2335 
-Importing 'GUID: 13cc6ef30ccde12488691885dc4f1711 - Path: Assets/Editor/VVREditor.asmdef' with importer (AssemblyDefinitionImporter)
-Imported 'GUID: 13cc6ef30ccde12488691885dc4f1711' -> (Import Result ID: '01fc5c115c3bc3713efcfb679b9c068c') in 0.018 seconds [static dependencies only]. Details - ImportResultOutputID=c23676b2bec52c5a0d0d2ca22207c495 DependenciesID=c1525663f88f087b6ceca6e7667e7fa8 StaticDependenciesID=6601d1f6a5e34693a6b81e1e83182fd0 
-Importing 'GUID: 7dd8cc6e23b616f44a68c433575819e3 - Path: Assets/Scripts/VVR.asmdef' with importer (AssemblyDefinitionImporter)
-Imported 'GUID: 7dd8cc6e23b616f44a68c433575819e3' -> (Import Result ID: '6559c63bb792a158046fabe1bf5c3ea9') in 0.015 seconds [static dependencies only]. Details - ImportResultOutputID=f22aeed2a11b798c6800e8ef841f6011 DependenciesID=7c099e76f28b77260ab471f2ab42a1b6 StaticDependenciesID=94c869c8d8b28af7d30b6100602b511c 
-Refreshing native plugins compatible for Editor in 393.20 ms, found 6 plugins.
+Imported 'GUID: 907426946d47e52478ef6859cbf64652' -> (Import Result ID: '6ac89ff7ec5436e29d7f1ed804d045ba') in 0.016 seconds [static dependencies only]. Details - ImportResultOutputID=c4552940d93dd86e305879eb50cdb06a DependenciesID=994417699b6f3c3d83f750b70c1b0aac StaticDependenciesID=9231e90f4c32e74c9ef2b16252fcbba2 
+Refreshing native plugins compatible for Editor in 931.08 ms, found 6 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Starting new worker id: 0 with log in C:/Users/aresg/.gemini/antigravity/scratch/VVR-Arena/Logs/AssetImportWorkerHW0.log
 ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
 Scripting: successfully reloaded assembly
-- Finished resetting the current domain, in  1.774 seconds
-Domain Reload Profiling: 7813ms
-	BeginReloadAssembly (1061ms)
-		DisableScriptedObjects (160ms)
-		CreateAndSetChildDomain (152ms)
-	RebuildCommonClasses (35ms)
-	RebuildNativeTypeToScriptingClass (56ms)
-	initialDomainReloadingComplete (247ms)
-	LoadAllAssembliesAndSetupDomain (4636ms)
-		LoadAssemblies (4055ms)
-		TypeCache.Refresh (437ms)
-			TypeCache.ScanAssembly (397ms)
+- Finished resetting the current domain, in  1.673 seconds
+Domain Reload Profiling: 6425ms
+	BeginReloadAssembly (1054ms)
+		DisableScriptedObjects (75ms)
+		CreateAndSetChildDomain (245ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (46ms)
+	initialDomainReloadingComplete (189ms)
+	LoadAllAssembliesAndSetupDomain (3433ms)
+		LoadAssemblies (3260ms)
+		TypeCache.Refresh (195ms)
+			TypeCache.ScanAssembly (173ms)
 		AnalyzeDomain (106ms)
-			BuildScriptInfoCaches (95ms)
+			BuildScriptInfoCaches (96ms)
 			ResolveRequiredComponents (6ms)
-	FinalizeReload (1778ms)
+	FinalizeReload (1676ms)
 		SetupLoadedEditorAssemblies (0ms)
-			LogAssemblyErrors (12ms)
-			InitializePlatformSupportModulesInManaged (7ms)
-			BeforeProcessingInitializeOnLoad (309ms)
-			ProcessInitializeOnLoadAttributes (371ms)
-			ProcessInitializeOnLoadMethodAttributes (410ms)
-			AfterProcessingInitializeOnLoad (23ms)
-		AwakeInstancesAfterBackupRestoration (83ms)
-AcceleratorClientConnectionCallback - disconnected - :0
-Importing 'GUID: 0000000000000000b000000000000000 - Path: ProjectSettings/EditorBuildSettings.asset' with importer (LibraryAssetImporter)
-Imported 'GUID: 0000000000000000b000000000000000' -> (Import Result ID: 'aba1f11b1e4da41efca43b697fc4a332') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=0a89a5c5f492143e0fa186859e17ba6f DependenciesID=397e0a6fde0abd764b2a80185a0a20e9 StaticDependenciesID=a77b4c3f5714ede56677a615ff8468a5 
-Importing 'GUID: 830451968f905854fab05c43ba8cf151 - Path: Assets/XR' with importer (DefaultImporter)
-Imported 'GUID: 830451968f905854fab05c43ba8cf151' -> (Import Result ID: '8fbd17456a7f1b3e445a37f36ea28454') in 0.017 seconds [static dependencies only]. Details - ImportResultOutputID=91b56160397930c569901873b5565eee DependenciesID=aba7d388bd9f28c3eb32a08a548407bf StaticDependenciesID=b5ffe3c54e156f961e5bb775736a5250 
-Importing 'GUID: f800896962c1d8344bc0d7e51f74313e - Path: Assets/XR 1' with importer (DefaultImporter)
-Imported 'GUID: f800896962c1d8344bc0d7e51f74313e' -> (Import Result ID: '809f6b9446b15359b17819439e4ef022') in 0.045 seconds [static dependencies only]. Details - ImportResultOutputID=70fe31dad201337e3417b87edd4c72a0 DependenciesID=1abdc1382f2b5b52948539fd2df63f5b StaticDependenciesID=e9481c6d81aa601919baebd250220f6a 
-Importing 'GUID: 57fc9495f3f09204e88c5274c065ba41 - Path: Assets/XR/Settings 1' with importer (DefaultImporter)
-Imported 'GUID: 57fc9495f3f09204e88c5274c065ba41' -> (Import Result ID: '0e2ac5402721fbb75d8f30d0cdf6df6e') in 0.016 seconds [static dependencies only]. Details - ImportResultOutputID=a0d79c6488573e56a350ccd9978d9ad8 DependenciesID=f4da3cb713d4ab8fe28098111645fd58 StaticDependenciesID=6a791fe1e2054dc7ab09b71a7a7a6f2e 
-Importing 'GUID: da881b18a2323dd4481197f5003963f3 - Path: Assets/XR/Settings' with importer (DefaultImporter)
-Imported 'GUID: da881b18a2323dd4481197f5003963f3' -> (Import Result ID: '8e4f3d005f4557d31339a081d915f908') in 0.016 seconds [static dependencies only]. Details - ImportResultOutputID=7fce517d7bac376b115e91c3e8617767 DependenciesID=9bc2e17d034ae426b17a8926f8ea8916 StaticDependenciesID=49a9cf374e1a51070f4010f8bc12c4f7 
-Importing 'GUID: ffcd859b857b5be4fad7f14909be84b7 - Path: Assets/XR/Settings/OpenXR Package Settings.asset' with importer (NativeFormatImporter)
-Imported 'GUID: ffcd859b857b5be4fad7f14909be84b7' -> (Import Result ID: '74c174028dd2f2d4aca29d51ab239fa4') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=2ca065b8c61024cdb1ba7493af214a5d DependenciesID=22c9ec03311646b8081fd8bc17f45913 StaticDependenciesID=93ec2ecb6ed1d7afaaae004ef1351416 
-Refreshing native plugins compatible for Editor in 13.43 ms, found 6 plugins.
+			LogAssemblyErrors (5ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			BeforeProcessingInitializeOnLoad (325ms)
+			ProcessInitializeOnLoadAttributes (437ms)
+			ProcessInitializeOnLoadMethodAttributes (260ms)
+			AfterProcessingInitializeOnLoad (25ms)
+			EditorAssembliesLoaded (3ms)
+		AwakeInstancesAfterBackupRestoration (76ms)
+Starting new worker id: 0 with log in C:/Users/aresg/.gemini/antigravity/scratch/VVR-Arena/Logs/AssetImportWorkerHW0.log
+Refreshing native plugins compatible for Editor in 18.10 ms, found 6 plugins.
 
-Asset Pipeline Refresh (id=c9e61326388215542b53237471b7d0da): Total: 25.642 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+Asset Pipeline Refresh (id=e98ffe137ef0f4c438326909ab1eb31c): Total: 41.157 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
 	(Values over 0.05ms)
 	Summary:
-		Imports: total=21 (actual=21, local cache=0, cache server=0)
-		Asset DB Process Time: managed=10 ms, native=12745 ms
-		Asset DB Callback time: managed=408 ms, native=92 ms
-		Scripting: domain reloads=1, domain reload time=6270 ms, compile time=6005 ms, other=109 ms
-		Project Asset Count: scripts=754, non-scripts=514
-		Asset File Changes: new=5, changed=11, moved=0, deleted=0
+		Imports: total=2 (actual=2, local cache=0, cache server=0)
+		Asset DB Process Time: managed=38 ms, native=15533 ms
+		Asset DB Callback time: managed=1475 ms, native=154 ms
+		Scripting: domain reloads=1, domain reload time=4933 ms, compile time=18905 ms, other=116 ms
+		Project Asset Count: scripts=769, non-scripts=575
+		Asset File Changes: new=0, changed=5, moved=0, deleted=0
 		Scan Filter Count: 0
-	InvokePackagesCallback: 73.905ms
-	ApplyChangesToAssetFolders: 1.508ms
-	Scan: 227.646ms
-	Collect global state as custom dependencies: 30.977ms
-	OnSourceAssetsModified: 3.011ms
-	CategorizeScriptCompilationAssets: 49.568ms
-	ProcessAssetsWithTransientArtifactChanges: 160.420ms
-	CategorizeAssets: 27.667ms
-	CompileScripts: 6004.722ms
-	ImportOutOfDateAssets: 3518.539ms (2430.609ms without children)
-		ImportManagerImport: 1081.987ms (12.026ms without children)
-			UpdateCategorizedAssets: 0.273ms
-		UnloadImportedAssets: 4.929ms
-		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.511ms
-		ImportSchedulerStart: 0.421ms
-	PostProcessAllAssets: 406.741ms
-		XRBuildSystem.XRAssetImported 4.859ms
-		VersionControlSettings.HiddenFilePostprocess 0.364ms
-		PostProcessCallbackCreateDeferredMaterials 0.176ms
-		ShaderAssetModifiedCallback 0.095ms
-		MonoPostProcessAllAssets: 399.273ms
-			AssetPostprocessor.OnPostprocessAllAssets 169.934ms
-			StyleCatalogPostProcessor.OnPostprocessAllAssets 62.175ms
-			WindowAssetPostprocessingWatcher.OnPostprocessAllAssets 41.872ms
-			BuilderAssetPostprocessor.OnPostprocessAllAssets 24.875ms
-			SyncVS.PostprocessSyncProject 18.148ms
-			AssetCallbacks.OnPostprocessAllAssets 16.428ms
-			AssetChangedListener.OnPostprocessAllAssets 7.911ms
-			RetainedModeAssetPostprocessor.OnPostprocessAllAssets 4.165ms
-			EditModeScopePostprocessor.OnPostprocessAllAssets 3.792ms
-			SpeedTree9Postprocessor.OnPostprocessAllAssets 2.563ms
-			ReferencedClipsPostProcessor.OnPostprocessAllAssets 2.304ms
-			TextAssetPostProcessor.OnPostprocessAllAssets 2.266ms
-			ArtifactBrowserPostProcessor.OnPostprocessAllAssets 2.041ms
-			AudioMixerPostprocessor.OnPostprocessAllAssets 1.543ms
-			TMPro_TexturePostProcessor.OnPostprocessAllAssets 1.396ms
-			AssetEvents.OnPostprocessAllAssets 1.334ms
-			InputActionAssetPostprocessor.OnPostprocessAllAssets 1.007ms
-			ScenarioDriftAssetsTracker.OnPostprocessAllAssets 0.868ms
-			AssetDatabaseCallbacks.OnPostprocessAllAssets 0.848ms
-			InputActionJsonNameModifierAssetProcessor.OnPostprocessAllAssets 0.780ms
-			ConfigAssetsTracker.OnPostprocessAllAssets 0.748ms
-			TerrainToolbarOverlayPostProcessor.OnPostprocessAllAssets 0.701ms
-			SamplePostprocessor.OnPostprocessAllAssets 0.435ms
-			ProjectSettingsPostprocessor.OnPostprocessAllAssets 0.372ms
-			SpeedTreePostProcessor.OnPostprocessAllAssets 0.372ms
-			ThemePostprocessor.OnPostprocessAllAssets 0.364ms
-			AudioContainerPostProcessor.OnPostprocessAllAssets 0.319ms
-			RenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 0.281ms
-	PostAssetChangesProfiler: 22.615ms
-	UnloadStreamsBegin: 4.662ms
-	PersistCurrentRevisions: 4.033ms
-	GenerateScriptTypeHashes: 1.232ms
-	GenerateScriptTypeSerializationHashes: 2.643ms
-	Untracked: 15030.174ms
+	InvokePackagesCallback: 128.710ms
+	ApplyChangesToAssetFolders: 1.476ms
+	Scan: 260.155ms
+	Collect global state as custom dependencies: 25.963ms
+	OnSourceAssetsModified: 2.124ms
+	CategorizeScriptCompilationAssets: 1116.320ms
+	ProcessAssetsWithTransientArtifactChanges: 134.494ms
+	CategorizeAssets: 31.494ms
+	CompileScripts: 18904.541ms
+	ImportOutOfDateAssets: 4047.204ms (3844.920ms without children)
+		ImportManagerImport: 165.891ms (14.600ms without children)
+			UpdateCategorizedAssets: 0.061ms
+		UnloadImportedAssets: 3.470ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.835ms
+		ImportSchedulerStart: 32.049ms
+	PostProcessAllAssets: 1487.784ms
+		XRBuildSystem.XRAssetImported 5.351ms
+		AssemblyValidation.PostprocessAllAssets 4.147ms
+		VCAutoAddAssetPostprocess 2.125ms
+		PostProcessCallbackCreateDeferredMaterials 0.105ms
+		MonoPostProcessAllAssets: 1473.599ms
+			SyncVS.PostprocessSyncProject 904.986ms
+			AssetPostprocessor.OnPostprocessAllAssets 288.477ms
+			StyleCatalogPostProcessor.OnPostprocessAllAssets 91.552ms
+			BuilderAssetPostprocessor.OnPostprocessAllAssets 45.859ms
+			WindowAssetPostprocessingWatcher.OnPostprocessAllAssets 33.888ms
+			AssetCallbacks.OnPostprocessAllAssets 23.304ms
+			EditModeScopePostprocessor.OnPostprocessAllAssets 9.041ms
+			AssetChangedListener.OnPostprocessAllAssets 8.672ms
+			RetainedModeAssetPostprocessor.OnPostprocessAllAssets 7.289ms
+			SpeedTree9Postprocessor.OnPostprocessAllAssets 3.579ms
+			InputActionAssetPostprocessor.OnPostprocessAllAssets 2.392ms
+			TextAssetPostProcessor.OnPostprocessAllAssets 2.377ms
+			InputActionJsonNameModifierAssetProcessor.OnPostprocessAllAssets 2.127ms
+			ArtifactBrowserPostProcessor.OnPostprocessAllAssets 1.854ms
+			AudioMixerPostprocessor.OnPostprocessAllAssets 1.753ms
+			TerrainToolbarOverlayPostProcessor.OnPostprocessAllAssets 1.275ms
+			AssetEvents.OnPostprocessAllAssets 1.093ms
+			ReferencedClipsPostProcessor.OnPostprocessAllAssets 0.935ms
+			AssetDatabaseCallbacks.OnPostprocessAllAssets 0.857ms
+			TMPro_TexturePostProcessor.OnPostprocessAllAssets 0.856ms
+			SpeedTreePostProcessor.OnPostprocessAllAssets 0.707ms
+			ProjectSettingsPostprocessor.OnPostprocessAllAssets 0.700ms
+			SamplePostprocessor.OnPostprocessAllAssets 0.666ms
+			ThemePostprocessor.OnPostprocessAllAssets 0.640ms
+			ConfigAssetsTracker.OnPostprocessAllAssets 0.537ms
+			ScenarioDriftAssetsTracker.OnPostprocessAllAssets 0.522ms
+			RenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 0.461ms
+			AudioContainerPostProcessor.OnPostprocessAllAssets 0.430ms
+	PostAssetChangesProfiler: 20.665ms
+	UnloadStreamsBegin: 3.696ms
+	PersistCurrentRevisions: 0.495ms
+	GenerateScriptTypeHashes: 3.192ms
+	GenerateScriptTypeSerializationHashes: 6.437ms
+	Untracked: 14912.718ms
 
 Application.AssetDatabase Initial Refresh End
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Scanning for USB devices : 7.623ms
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.54 seconds
+Scanning for USB devices : 6.884ms
 Initializing Unity extensions:
 [MODES] ModeService[none].Initialize
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-VVR-Arena
+Worker ready: AssetImportWorkerHW0 0
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 2868 unused Assets / (1.6 MB). Loaded Objects now: 3619.
-Memory consumption went from 267.9 MB to 266.3 MB.
-Total: 17.574900 ms (FindLiveObjects: 0.542500 ms CreateObjectMapping: 0.514800 ms MarkObjects: 14.537400 ms  DeleteObjects: 1.720700 ms)
+Unloading 2868 unused Assets / (1.6 MB). Loaded Objects now: 3641.
+Memory consumption went from 267.1 MB to 265.6 MB.
+Total: 19.683600 ms (FindLiveObjects: 1.276000 ms CreateObjectMapping: 1.127300 ms MarkObjects: 14.799500 ms  DeleteObjects: 2.118800 ms)
 
 [VVRProjectSetup] Starting VVR-Arena Complete Vertical Slice Build...
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
@@ -417,178 +393,120 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
 UnityEngine.Logger:Log (UnityEngine.LogType,object)
 UnityEngine.Debug:Log (object)
-VVRProjectSetup:BuildCompleteVerticalSlice () (at Assets/Editor/VVRProjectSetup.cs:28)
+VVRProjectSetup:BuildCompleteVerticalSlice () (at Assets/Editor/VVRProjectSetup.cs:37)
 
-(Filename: Assets/Editor/VVRProjectSetup.cs Line: 28)
+(Filename: Assets/Editor/VVRProjectSetup.cs Line: 37)
 
-Importing 'GUID: 78741b67d3f3ed744a44739a3713a948 - Path: Assets/Materials' with importer (DefaultImporter)
-Imported 'GUID: 78741b67d3f3ed744a44739a3713a948' -> (Import Result ID: 'd1934218a5ce168cb9a8a97a729aeb03') in 0.020 seconds [static dependencies only]. Details - ImportResultOutputID=fd2d107fd18120eb5bef8f5bac23a71c DependenciesID=4eb4775c34af11cea444beae2a653384 StaticDependenciesID=81334234655d0c4d8569019879f8b530 
-Refreshing native plugins compatible for Editor in 16.18 ms, found 6 plugins.
-Asset Pipeline Refresh (id=281cc2ff3036ff748b64f09086491259): Total: 0.287 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Importing 'GUID: 3ce5fbc961b53054ba079313acbc4687 - Path: Assets/Animations' with importer (DefaultImporter)
-Imported 'GUID: 3ce5fbc961b53054ba079313acbc4687' -> (Import Result ID: 'eef29373d17219f24766b4eff65b7d0c') in 0.050 seconds [static dependencies only]. Details - ImportResultOutputID=cbd2107b516a04f7bcd02ebbc39c407a DependenciesID=16c7fa76d7ce3c75cfc4264f0689af56 StaticDependenciesID=47545d6b3f02a1f99db3bf14f80c7810 
-Refreshing native plugins compatible for Editor in 19.93 ms, found 6 plugins.
-Asset Pipeline Refresh (id=70985a48b32235542911e31e3ee3b968): Total: 0.115 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Importing 'GUID: 9742d5ab03a3e9d43a4cd7fbbb5741cb - Path: Assets/Input' with importer (DefaultImporter)
-Imported 'GUID: 9742d5ab03a3e9d43a4cd7fbbb5741cb' -> (Import Result ID: '8553d0bf6aae4f9fb8e11ebc4067df39') in 0.025 seconds [static dependencies only]. Details - ImportResultOutputID=c2f94eaf28e2c217af18db144ed0c380 DependenciesID=b840b144fcbb0ac4662740920307c23c StaticDependenciesID=a9d211273b513c0259a6044ce1e7ffa2 
-Refreshing native plugins compatible for Editor in 13.99 ms, found 6 plugins.
-Asset Pipeline Refresh (id=9ed94a31116552049ac7edc9924a22ab): Total: 0.075 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Importing 'GUID: adbc91555f2a4134b86e9951af4053c5 - Path: Assets/Prefabs' with importer (DefaultImporter)
-Imported 'GUID: adbc91555f2a4134b86e9951af4053c5' -> (Import Result ID: 'b6ecfa312699b21cd886b69568163da4') in 0.023 seconds [static dependencies only]. Details - ImportResultOutputID=5a07c07753b938ae3b1581b5b53cbcd6 DependenciesID=9e9f74a5ac5ff8456785d10f18017519 StaticDependenciesID=fef88f54da6f7b932e498ed13d5fd7f9 
-Refreshing native plugins compatible for Editor in 11.80 ms, found 6 plugins.
-Asset Pipeline Refresh (id=c5882334616100f46bbd3177b946127e): Total: 0.075 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Importing 'GUID: 79a1c7ff8a1aa144980d7b412b2b5995 - Path: Assets/Scenes' with importer (DefaultImporter)
-Imported 'GUID: 79a1c7ff8a1aa144980d7b412b2b5995' -> (Import Result ID: '9ae5f45d6cf9850b94fb7ab73ffce08a') in 0.026 seconds [static dependencies only]. Details - ImportResultOutputID=a1eb92afaca5af764e0f019ac6c915e4 DependenciesID=c4d7008831533b57ff21400e91da2d7c StaticDependenciesID=6f0ae0f95d2a72a20aaecf4c1973b025 
-Refreshing native plugins compatible for Editor in 39.70 ms, found 6 plugins.
-Asset Pipeline Refresh (id=8efabcdba5a3d054987b0f355ce8ad98): Total: 0.106 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Importing 'GUID: 11ad92fc29988ef438ef6b511abff325 - Path: Assets/Materials/ArenaFloor.mat' with importer (NativeFormatImporter)
-Imported 'GUID: 11ad92fc29988ef438ef6b511abff325' -> (Import Result ID: 'abd526d5219712dd150f517c51389a27') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=e261bf1b7aa70d19142808e9524e088f DependenciesID=2de9d79447be621f182d6bd6ddd8b3ca StaticDependenciesID=51ed0ed12b4e8053ef284d7f045dc08c 
-Refreshing native plugins compatible for Editor in 14.20 ms, found 6 plugins.
-Asset Pipeline Refresh (id=fde260f9ac759724c85c451d3dcfb197): Total: 0.068 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Importing 'GUID: a71bbe4af89db454da9d770986eb5d14 - Path: Assets/Materials/ArenaStone.mat' with importer (NativeFormatImporter)
-Imported 'GUID: a71bbe4af89db454da9d770986eb5d14' -> (Import Result ID: 'a5687a29f54e04f68fab20731d400964') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=2ad35dc05fbcb085155ecfbf79752066 DependenciesID=2951d766890b0df9f58a9e2463c34635 StaticDependenciesID=6ce0d7391835b219a00f15ff4e2bfe89 
-Refreshing native plugins compatible for Editor in 10.38 ms, found 6 plugins.
-Asset Pipeline Refresh (id=048cc6c91bda079498908aeff681c554): Total: 0.069 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Importing 'GUID: 127cd13cd49bc9c428458615f266a6c6 - Path: Assets/Materials/WoodTimber.mat' with importer (NativeFormatImporter)
-Imported 'GUID: 127cd13cd49bc9c428458615f266a6c6' -> (Import Result ID: 'c9c744995c280929a5f09caa6780ee33') in 0.001 seconds [static dependencies only]. Details - ImportResultOutputID=3f1ab65a0c9cc9a0d91e3e97875316b6 DependenciesID=51b1063c9626ebff8ccdb45c5d55f027 StaticDependenciesID=79c874f6de3a24d6f9b0bf5e4805650b 
-Refreshing native plugins compatible for Editor in 12.15 ms, found 6 plugins.
-Asset Pipeline Refresh (id=7e39f501400589a4e9ca784b10b4540a): Total: 0.053 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Importing 'GUID: 91408fe4968b8034481ab137e384427d - Path: Assets/Materials/SteelBlade.mat' with importer (NativeFormatImporter)
-Imported 'GUID: 91408fe4968b8034481ab137e384427d' -> (Import Result ID: '0f1a5309cc61d1879dd729ff5dfdbf5a') in 0.003 seconds [static dependencies only]. Details - ImportResultOutputID=973bd5673b1e243b9fc28498e0870465 DependenciesID=a1216e1d629cb3150bcf23e267e2f548 StaticDependenciesID=4708dbc62d333609e35ae17ef7090764 
-Refreshing native plugins compatible for Editor in 14.28 ms, found 6 plugins.
-Asset Pipeline Refresh (id=e4fbe9d59bded4a4cae2becb622838b4): Total: 0.057 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Importing 'GUID: 4bc37bb036cdf304790f1b4c0bed7636 - Path: Assets/Materials/DarkIron.mat' with importer (NativeFormatImporter)
-Imported 'GUID: 4bc37bb036cdf304790f1b4c0bed7636' -> (Import Result ID: 'fc23f1a375a52eec49b0cbfc1ce59666') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=6ef35122d16f6b001f9c3ef1d17ab8a0 DependenciesID=1b8df5a5651b110cc760c876624e9cba StaticDependenciesID=9e3627054b8e414af60be32a8eff7ada 
-Refreshing native plugins compatible for Editor in 32.18 ms, found 6 plugins.
-Asset Pipeline Refresh (id=62837c7de2050f84986a1e414e64839f): Total: 0.073 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Importing 'GUID: 21021f62db60f4c44a83f9b0f67d695c - Path: Assets/Materials/ShieldWood.mat' with importer (NativeFormatImporter)
-Imported 'GUID: 21021f62db60f4c44a83f9b0f67d695c' -> (Import Result ID: 'a48bb59e49d28e5e3929a592dcd7a80e') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=f5bf035ea0cd1b842faa040139158522 DependenciesID=fd9298925804a83e4245a3a4fc57351b StaticDependenciesID=203ba5a78639addf2f3cfc21364bd8bb 
-Refreshing native plugins compatible for Editor in 15.26 ms, found 6 plugins.
-Asset Pipeline Refresh (id=bf3b6cb29c0f708409db7966f54ebade): Total: 0.066 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Importing 'GUID: 323adb17c7d6a914f9ece9e7f3111c57 - Path: Assets/Materials/EnemyTunic.mat' with importer (NativeFormatImporter)
-Imported 'GUID: 323adb17c7d6a914f9ece9e7f3111c57' -> (Import Result ID: 'de05c7716bed2c6333c730643e7b06d7') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=b0a7934501d922b1ad1a223681775c23 DependenciesID=bf63c300adf0f5f69cdf738de08a8cbb StaticDependenciesID=505460afcf309d0f997ef937fcb3367c 
-Refreshing native plugins compatible for Editor in 11.99 ms, found 6 plugins.
-Asset Pipeline Refresh (id=a8485ada0f003a64789d1af670e6190c): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Importing 'GUID: ad8680c49f1595147bea9767d33b2506 - Path: Assets/Materials/EnemySkin.mat' with importer (NativeFormatImporter)
-Imported 'GUID: ad8680c49f1595147bea9767d33b2506' -> (Import Result ID: '54b95c4b501fe923311b232ad7418389') in 0.003 seconds [static dependencies only]. Details - ImportResultOutputID=76542eea66df233f3e589e20a3794176 DependenciesID=3af4f2adb27768d5ae291416abc09d71 StaticDependenciesID=4355a02d86d42a5cffb81dd888382925 
-Refreshing native plugins compatible for Editor in 16.13 ms, found 6 plugins.
-Asset Pipeline Refresh (id=e46063d5356b06f4bac50582bcd26ce0): Total: 0.073 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Importing 'GUID: 9c5aba3f8fa61f842aad8276cf7aab91 - Path: Assets/Materials/BloodRed.mat' with importer (NativeFormatImporter)
-Imported 'GUID: 9c5aba3f8fa61f842aad8276cf7aab91' -> (Import Result ID: '27cb64709b35d26aa19091456c3b7526') in 0.003 seconds [static dependencies only]. Details - ImportResultOutputID=622dc3ee213b5114331e1116dd3585c9 DependenciesID=c6a2bb4357eb2d7f33b1ae6089ca258a StaticDependenciesID=cc2f41ce0b5b3ac37668208b2d229eae 
-Refreshing native plugins compatible for Editor in 14.23 ms, found 6 plugins.
-Asset Pipeline Refresh (id=0300880dd069579459859745432ff2ab): Total: 0.063 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Importing 'GUID: a1acb72f74e84854aa62857ab5983138 - Path: Assets/Materials/PlayerHand.mat' with importer (NativeFormatImporter)
-Imported 'GUID: a1acb72f74e84854aa62857ab5983138' -> (Import Result ID: '02351ef62aabb6fbd04a63a8839484c4') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=aca85d5cc7b7343416c8b1171e3c059a DependenciesID=a5b3f822ca959bb692f2918b1bf67a02 StaticDependenciesID=ca0003eb4206de802b3578f97819e98a 
-Refreshing native plugins compatible for Editor in 9.95 ms, found 6 plugins.
-Asset Pipeline Refresh (id=0161397c7eea48b49ba44aaa004c03ed): Total: 0.055 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Importing 'GUID: 876e73de9f31e4e46bdfe49dede006ff - Path: Assets/Materials/TorchFlame.mat' with importer (NativeFormatImporter)
-Imported 'GUID: 876e73de9f31e4e46bdfe49dede006ff' -> (Import Result ID: '53917f15cdfaa8486017732fdfd45745') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=69831e846944af698b8ee7b8df8fa824 DependenciesID=981ae1312c1f2162076005529083e8cd StaticDependenciesID=f68d949f0182e32709b407320c378f12 
-Refreshing native plugins compatible for Editor in 15.51 ms, found 6 plugins.
-Asset Pipeline Refresh (id=193158d37fa46a14fbe969444c6ed5dd): Total: 0.076 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Importing 'GUID: 0bf21d40f043f444e836f1747ae35af2 - Path: Assets/Animations/EnemyAnimatorController.controller' with importer (NativeFormatImporter)
-Imported 'GUID: 0bf21d40f043f444e836f1747ae35af2' -> (Import Result ID: '6b2722c52734e5b8c115fb48d26757d5') in 0.003 seconds [static dependencies only]. Details - ImportResultOutputID=8e2747a0b0bdab7263a5677839ee9b70 DependenciesID=904441a3b901f43f39057e7eb966e94a StaticDependenciesID=61825e764c733d8ad59a9f4b7435a3ab 
-Refreshing native plugins compatible for Editor in 8.33 ms, found 6 plugins.
-Asset Pipeline Refresh (id=1796c3a66a8a8cf48b8a4ff6954cbbea): Total: 0.050 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Importing 'GUID: 0af3635420011af4390ea54926630dd5 - Path: Assets/Animations/HandAnimatorController.controller' with importer (NativeFormatImporter)
-Imported 'GUID: 0af3635420011af4390ea54926630dd5' -> (Import Result ID: '546ea7ea71fd7f5e7ef8825315893723') in 0.004 seconds [static dependencies only]. Details - ImportResultOutputID=0d2525c17a9964ec81d1a5fa02f309b1 DependenciesID=91dc2b455ce2798774cbe3c7502257f6 StaticDependenciesID=622e5fe0f353720775bd7820238c8961 
-Refreshing native plugins compatible for Editor in 17.03 ms, found 6 plugins.
-
-Asset Pipeline Refresh (id=7ee3015375b4c894bac274c226e72917): Total: 0.711 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-	(Values over 0.05ms)
-	Summary:
-		Imports: total=1 (actual=1, local cache=0, cache server=0)
-		Asset DB Process Time: managed=0 ms, native=685 ms
-		Asset DB Callback time: managed=3 ms, native=22 ms
-		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
-		Project Asset Count: scripts=759, non-scripts=527
-		Asset File Changes: new=1, changed=1, moved=0, deleted=0
-		Scan Filter Count: 3
-	ApplyChangesToAssetFolders: 0.155ms
-	Scan: 671.679ms
-	Collect global state as custom dependencies: 1.234ms
-	OnSourceAssetsModified: 0.121ms
-	ProcessAssetsWithTransientArtifactChanges: 0.053ms
-	CategorizeAssets: 1.629ms
-	ImportOutOfDateAssets: 7.958ms (0.510ms without children)
-		ImportManagerImport: 5.220ms (0.300ms without children)
-		ReloadNativeAssets: 0.070ms
-		UnloadImportedAssets: 0.824ms
-		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.590ms
-		ImportSchedulerStart: 0.727ms
-	PostProcessAllAssets: 6.394ms
-		XRBuildSystem.XRAssetImported 4.497ms
-		VersionControlSettings.HiddenFilePostprocess 0.119ms
-		MonoPostProcessAllAssets: 1.420ms
-			SyncVS.PostprocessSyncProject 0.681ms
-			AssetPostprocessor.OnPostprocessAllAssets 0.111ms
-			AssetChangedListener.OnPostprocessAllAssets 0.062ms
-	PostAssetChangesProfiler: 18.805ms
-	GatherAllCurrentPrimaryImportResultRevisions: 0.084ms
-	PersistCurrentRevisions: 0.287ms
-	Untracked: 2.659ms
-
-Importing 'GUID: 90c4100c36d51244fa3c27169c69011c - Path: Assets/Input/VVRInputActions.asset' with importer (NativeFormatImporter)
-Imported 'GUID: 90c4100c36d51244fa3c27169c69011c' -> (Import Result ID: '368a8e8ae43d31cf76d0d2823833903c') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=ad91b60e39c162152d0a14e7f42f9660 DependenciesID=57e5b17aa03843afec7f87b23727ecb9 StaticDependenciesID=b96558d82c958b2da2554cd230441acd 
-Refreshing native plugins compatible for Editor in 11.80 ms, found 6 plugins.
-Asset Pipeline Refresh (id=c3e7ec2e40b3dca48b2a5bdeb6063d59): Total: 0.061 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Worker ready: AssetImportWorkerHW0 0
-Importing 'GUID: 65a30458c724f5847ac95510a3229f32 - Path: Assets/Prefabs/Sword.prefab' with importer (PrefabImporter)
-Imported 'GUID: 65a30458c724f5847ac95510a3229f32' -> (Import Result ID: 'e83ad5824d30afb3c459334ffa941366') in 0.034 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f760198b023c01fd6478c3346bfa1cb4 DependenciesID=61bfd36d2490d8d3b9db1ad9828e5f4d StaticDependenciesID=75414b608c2d9d91ff8865993341a4d9 
-Refreshing native plugins compatible for Editor in 12.67 ms, found 6 plugins.
-Asset Pipeline Refresh (id=bd4b8e3eecd72e84e9db6514b908c9de): Total: 0.091 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Importing 'GUID: 9c89ac6386f617e45ba1d897a7d63ace - Path: Assets/Prefabs/Axe.prefab' with importer (PrefabImporter)
-Imported 'GUID: 9c89ac6386f617e45ba1d897a7d63ace' -> (Import Result ID: 'ce4ffd80d29f722e64a3a029baa623db') in 0.026 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c31f1e4f5457eea467c4ab7a55a5c05e DependenciesID=0edd3243966effa80efe94c3ee6e76cf StaticDependenciesID=fd48d2fe0fb102e33921f5d1c1b4739a 
-Refreshing native plugins compatible for Editor in 13.08 ms, found 6 plugins.
-Asset Pipeline Refresh (id=8ae993b113f97e142abb859b972d6e5a): Total: 0.181 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Importing 'GUID: bd427b4077170e546a4a9291d7fe2288 - Path: Assets/Prefabs/Shield.prefab' with importer (PrefabImporter)
-Imported 'GUID: bd427b4077170e546a4a9291d7fe2288' -> (Import Result ID: '29e884300c3b4fa113293510666e327e') in 0.023 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3f57d9cb8f74f752d0d869a7f752f0bd DependenciesID=89d1a337da6a3546b1fe69c6790ec8ba StaticDependenciesID=0188ed16a2cf8849b58c0511fc7a01ad 
-Refreshing native plugins compatible for Editor in 11.78 ms, found 6 plugins.
-Asset Pipeline Refresh (id=841d0c60faa871c48aef4d8ffa1fe489): Total: 0.071 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Importing 'GUID: 8c724fcb4bda34f41a1b15b1b14cce27 - Path: Assets/Prefabs/VikingEnemy.prefab' with importer (PrefabImporter)
-Imported 'GUID: 8c724fcb4bda34f41a1b15b1b14cce27' -> (Import Result ID: '5b3de22791af695049fd0eca51883b1d') in 0.080 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2dbd6ea2794d6d5f199664b55b4efff6 DependenciesID=a7ecf7cde48a8f548403253aa35d1774 StaticDependenciesID=86513798605a8d379360c87f5eb154e9 
-Refreshing native plugins compatible for Editor in 9.81 ms, found 6 plugins.
-Asset Pipeline Refresh (id=00ed681734c56764aa0402722199deb0): Total: 0.212 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 142 unused Assets / (96.9 KB). Loaded Objects now: 3652.
-Memory consumption went from 268.3 MB to 268.2 MB.
-Total: 36.755000 ms (FindLiveObjects: 0.781000 ms CreateObjectMapping: 0.315100 ms MarkObjects: 34.924400 ms  DeleteObjects: 0.295000 ms)
-
-Importing 'GUID: 11ad92fc29988ef438ef6b511abff325 - Path: Assets/Materials/ArenaFloor.mat' with importer (NativeFormatImporter)
-Imported 'GUID: 11ad92fc29988ef438ef6b511abff325' -> (Import Result ID: '7a6a77241dc6a9437a8695f9a3bf173d') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=e261bf1b7aa70d19142808e9524e088f DependenciesID=3709d709456a2d814adf92760ce199a6 StaticDependenciesID=8a2eeb077d3747ec9d4f2d2141895942 
-Importing 'GUID: 21021f62db60f4c44a83f9b0f67d695c - Path: Assets/Materials/ShieldWood.mat' with importer (NativeFormatImporter)
-Imported 'GUID: 21021f62db60f4c44a83f9b0f67d695c' -> (Import Result ID: '2dabb247246a5b5ab726105f81876c20') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=f5bf035ea0cd1b842faa040139158522 DependenciesID=ec91b3bd5e371863de28fe43f7450f43 StaticDependenciesID=b61195314f36958f5c591094c1654487 
-Importing 'GUID: 91408fe4968b8034481ab137e384427d - Path: Assets/Materials/SteelBlade.mat' with importer (NativeFormatImporter)
-Imported 'GUID: 91408fe4968b8034481ab137e384427d' -> (Import Result ID: 'a9927798daf214cd48aaf0723d7e491d') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=973bd5673b1e243b9fc28498e0870465 DependenciesID=65b10cb5e71ab64a76b2c487c88a00cc StaticDependenciesID=c9bfa7a58b13501022c6f502d6dfdfad 
-Importing 'GUID: a1acb72f74e84854aa62857ab5983138 - Path: Assets/Materials/PlayerHand.mat' with importer (NativeFormatImporter)
-Imported 'GUID: a1acb72f74e84854aa62857ab5983138' -> (Import Result ID: '85b519cfc90106587f35d2d25c29e279') in 0.003 seconds [static dependencies only]. Details - ImportResultOutputID=aca85d5cc7b7343416c8b1171e3c059a DependenciesID=710f9c6dc13787a3833dce3871d4f8ed StaticDependenciesID=0470f36c39aa22e4ed8495bafdde12ce 
-Importing 'GUID: 127cd13cd49bc9c428458615f266a6c6 - Path: Assets/Materials/WoodTimber.mat' with importer (NativeFormatImporter)
-Imported 'GUID: 127cd13cd49bc9c428458615f266a6c6' -> (Import Result ID: '54493733c9e57e70ab204f4e7ca9ee94') in 0.003 seconds [static dependencies only]. Details - ImportResultOutputID=3f1ab65a0c9cc9a0d91e3e97875316b6 DependenciesID=37ac35bd62e71fdc25fab6868c58f4cf StaticDependenciesID=023328a15a78da421c7cd2f17e51dd93 
-Importing 'GUID: 323adb17c7d6a914f9ece9e7f3111c57 - Path: Assets/Materials/EnemyTunic.mat' with importer (NativeFormatImporter)
-Imported 'GUID: 323adb17c7d6a914f9ece9e7f3111c57' -> (Import Result ID: '22ce7fd6b7a49c1644f19dbeeec6512c') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=b0a7934501d922b1ad1a223681775c23 DependenciesID=fcfd53545d337fed96a5770365edc8d2 StaticDependenciesID=c9557ee72c5d4aa3c618587917af4dea 
-Importing 'GUID: 876e73de9f31e4e46bdfe49dede006ff - Path: Assets/Materials/TorchFlame.mat' with importer (NativeFormatImporter)
-Imported 'GUID: 876e73de9f31e4e46bdfe49dede006ff' -> (Import Result ID: 'fdb74363aa76dc0d830f1211aa8b7391') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=69831e846944af698b8ee7b8df8fa824 DependenciesID=156c15fef14f6822bae46e2ea19a92ff StaticDependenciesID=3504451bcbc00ee843177f156af3ec7a 
-Importing 'GUID: a71bbe4af89db454da9d770986eb5d14 - Path: Assets/Materials/ArenaStone.mat' with importer (NativeFormatImporter)
-Imported 'GUID: a71bbe4af89db454da9d770986eb5d14' -> (Import Result ID: '27e617523c532b5d36aaceb144ea242b') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=2ad35dc05fbcb085155ecfbf79752066 DependenciesID=464340605392a54f23171aa6e372b3b3 StaticDependenciesID=af8216a58d7c11e1ba09810898d5a23b 
-Importing 'GUID: 4bc37bb036cdf304790f1b4c0bed7636 - Path: Assets/Materials/DarkIron.mat' with importer (NativeFormatImporter)
-Imported 'GUID: 4bc37bb036cdf304790f1b4c0bed7636' -> (Import Result ID: 'f54919016107dc3f3456627d0aec8186') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=6ef35122d16f6b001f9c3ef1d17ab8a0 DependenciesID=801481da8fc2f8eab06e69a0f99dd76d StaticDependenciesID=4db1c5b7fb503c3d04e9c4d588b6ae4e 
-Importing 'GUID: 9c5aba3f8fa61f842aad8276cf7aab91 - Path: Assets/Materials/BloodRed.mat' with importer (NativeFormatImporter)
-Imported 'GUID: 9c5aba3f8fa61f842aad8276cf7aab91' -> (Import Result ID: 'f23478fa8b62e589840b4cd1bca26f14') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=622dc3ee213b5114331e1116dd3585c9 DependenciesID=cdd15b07a58ba5869cfb78202c9ec8ef StaticDependenciesID=d56b021d5579d0bbc4a4a53800310e1d 
-Importing 'GUID: ad8680c49f1595147bea9767d33b2506 - Path: Assets/Materials/EnemySkin.mat' with importer (NativeFormatImporter)
-Imported 'GUID: ad8680c49f1595147bea9767d33b2506' -> (Import Result ID: '3a6ce81e829eca3b71c40da19cf5fedc') in 0.003 seconds [static dependencies only]. Details - ImportResultOutputID=76542eea66df233f3e589e20a3794176 DependenciesID=5a2852059e965e364961633c0aade864 StaticDependenciesID=5515e2a9cc8ccee56753ddf5dca76dd0 
-Importing 'GUID: 0af3635420011af4390ea54926630dd5 - Path: Assets/Animations/HandAnimatorController.controller' with importer (NativeFormatImporter)
-Imported 'GUID: 0af3635420011af4390ea54926630dd5' -> (Import Result ID: '8127519ee5d24d16646db29345fb8cf7') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=0d2525c17a9964ec81d1a5fa02f309b1 DependenciesID=254b2365c8e78f529ba52c0d67f88f62 StaticDependenciesID=472ad3e22637443ea810e1c885e515fd 
-Importing 'GUID: 0bf21d40f043f444e836f1747ae35af2 - Path: Assets/Animations/EnemyAnimatorController.controller' with importer (NativeFormatImporter)
-Imported 'GUID: 0bf21d40f043f444e836f1747ae35af2' -> (Import Result ID: 'ca8e99be44f0a8f5e6adc82ad9cd1ee1') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=8e2747a0b0bdab7263a5677839ee9b70 DependenciesID=b3e49744fe7b5c3390d6243dbfa6ba4e StaticDependenciesID=5210ff4eb535d31be6066bd45ee50cc0 
-Importing 'GUID: 90c4100c36d51244fa3c27169c69011c - Path: Assets/Input/VVRInputActions.asset' with importer (NativeFormatImporter)
-Imported 'GUID: 90c4100c36d51244fa3c27169c69011c' -> (Import Result ID: '368a8e8ae43d31cf76d0d2823833903c') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=ad91b60e39c162152d0a14e7f42f9660 DependenciesID=57e5b17aa03843afec7f87b23727ecb9 StaticDependenciesID=b96558d82c958b2da2554cd230441acd 
+Importing 'GUID: 1b606b37c1d2d6e4398773503027e26c - Path: Assets/XR/XRGeneralSettingsPerBuildTarget.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 1b606b37c1d2d6e4398773503027e26c' -> (Import Result ID: '832df57c4ecd565e315246a896039296') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=429615fa982010c2730361583a99cadc DependenciesID=e76e81fd06aa6e1319a102ecf9a8407f StaticDependenciesID=ac7f656fb17c8da072e20300d7ac6da3 
+Refreshing native plugins compatible for Editor in 12.84 ms, found 6 plugins.
+Asset Pipeline Refresh (id=1dd6c557d6a91984a87a6ce34b816b7f): Total: 0.171 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+AcceleratorClientConnectionCallback - disconnected - :0
+Importing 'GUID: 00000000000000008000000000000000 - Path: ProjectSettings/DynamicsManager.asset' with importer (LibraryAssetImporter)
+Imported 'GUID: 00000000000000008000000000000000' -> (Import Result ID: '89ed20419a903dd7c6549113056597e2') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=f4e5ea74158efa9a7415a6abc5cfeedf DependenciesID=dfadcd3a1b80dc1108fbbb314b9587f2 StaticDependenciesID=0d20f4793008a0f1472f8111cd7daef2 
+Importing 'GUID: 0000000000000000b000000000000000 - Path: ProjectSettings/EditorBuildSettings.asset' with importer (LibraryAssetImporter)
+Imported 'GUID: 0000000000000000b000000000000000' -> (Import Result ID: 'c0c245a99c6024ede13efbfca3d5892d') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=0a89a5c5f492143e0fa186859e17ba6f DependenciesID=b23b4325ff5b7ff51a2de29df28620a1 StaticDependenciesID=9978d5446ac21b47577ab55fe40f163f 
+Importing 'GUID: 1b606b37c1d2d6e4398773503027e26c - Path: Assets/XR/XRGeneralSettingsPerBuildTarget.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 1b606b37c1d2d6e4398773503027e26c' -> (Import Result ID: '14116524fa4ad177bf76fc6a16fe97cd') in 0.003 seconds [static dependencies only]. Details - ImportResultOutputID=162844255cd8f3133247cb075a9995a8 DependenciesID=a93c872ef4c8ebe5c031393e705d8254 StaticDependenciesID=f52d2b676c4eeb937f624cb81abc8da3 
+Refreshing native plugins compatible for Editor in 14.40 ms, found 6 plugins.
+Asset Pipeline Refresh (id=244b91c051ddd744d836e2770b3d6b35): Total: 0.056 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: 1b606b37c1d2d6e4398773503027e26c - Path: Assets/XR/XRGeneralSettingsPerBuildTarget.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 1b606b37c1d2d6e4398773503027e26c' -> (Import Result ID: 'e91a8b634c5e0781bfda31ff89e1d415') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=95dc1513579937b2984869f98270baf6 DependenciesID=bbd86c81be44c4b6a4c1a0cd0a7ac8a3 StaticDependenciesID=568eef4055eb87864a43b3cff59bc7f4 
+Refreshing native plugins compatible for Editor in 11.21 ms, found 6 plugins.
+Asset Pipeline Refresh (id=6a7a1c50f0f38e545924fda4ca3d662c): Total: 0.047 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: 1b606b37c1d2d6e4398773503027e26c - Path: Assets/XR/XRGeneralSettingsPerBuildTarget.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 1b606b37c1d2d6e4398773503027e26c' -> (Import Result ID: '3f9df7582209bc342b66b77815bdf88d') in 0.003 seconds [static dependencies only]. Details - ImportResultOutputID=71b6a2e2550599b61caca55342894a76 DependenciesID=1ce4b2fde68b07d083b7698c628f7968 StaticDependenciesID=9f1916fadcd0ba2f0f4fe0063cafab01 
+Refreshing native plugins compatible for Editor in 11.48 ms, found 6 plugins.
+Asset Pipeline Refresh (id=aaa64995302f7ab4fb38f3250289870e): Total: 0.051 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: 1b606b37c1d2d6e4398773503027e26c - Path: Assets/XR/XRGeneralSettingsPerBuildTarget.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 1b606b37c1d2d6e4398773503027e26c' -> (Import Result ID: '646f0c4fc34cfd345b3fe7ab74adcd36') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=f23ae594b336db6c7e458d1524e1d843 DependenciesID=5957fcceae18be55637413102fc70681 StaticDependenciesID=7525429e24074242555fb5cbd4d97856 
+Refreshing native plugins compatible for Editor in 10.98 ms, found 6 plugins.
+Asset Pipeline Refresh (id=4109125e2038b28408ca889fd69758c2): Total: 0.051 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: 1b606b37c1d2d6e4398773503027e26c - Path: Assets/XR/XRGeneralSettingsPerBuildTarget.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 1b606b37c1d2d6e4398773503027e26c' -> (Import Result ID: '440c50f5d60f93f5c014e3e6b0a7eebb') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=f23ae594b336db6c7e458d1524e1d843 DependenciesID=66c89bddb771431b8270b05f3252070d StaticDependenciesID=ff92b55c6894298135fd1931671d8ec7 
 Importing 'GUID: ffcd859b857b5be4fad7f14909be84b7 - Path: Assets/XR/Settings/OpenXR Package Settings.asset' with importer (NativeFormatImporter)
-Imported 'GUID: ffcd859b857b5be4fad7f14909be84b7' -> (Import Result ID: '5f74dac94629e6d47ead4b220ca3ec2a') in 0.003 seconds [static dependencies only]. Details - ImportResultOutputID=2ca065b8c61024cdb1ba7493af214a5d DependenciesID=6ab7a24d1ba58ba7971eda3cb914d7aa StaticDependenciesID=65cecec9e2377047c708d47c148e1570 
-Refreshing native plugins compatible for Editor in 13.72 ms, found 6 plugins.
-Asset Pipeline Refresh (id=bc69cf8fd7ec179468e6c456ca602499): Total: 0.119 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Imported 'GUID: ffcd859b857b5be4fad7f14909be84b7' -> (Import Result ID: '13bff1eada953b4c8c44561a7ab314b9') in 0.019 seconds [static dependencies only]. Details - ImportResultOutputID=3b37ceba34948423f284552379df94f7 DependenciesID=496327299bb86b2102576e41b314e331 StaticDependenciesID=372b310b5241536bab004019e02f7a31 
+Refreshing native plugins compatible for Editor in 9.28 ms, found 6 plugins.
+Asset Pipeline Refresh (id=36f74586769eab043a80b7d86ce2cb28): Total: 0.063 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: ffcd859b857b5be4fad7f14909be84b7 - Path: Assets/XR/Settings/OpenXR Package Settings.asset' with importer (NativeFormatImporter)
+Imported 'GUID: ffcd859b857b5be4fad7f14909be84b7' -> (Import Result ID: 'ffe9bbca3876d09cb032d4d6d82dc98a') in 0.111 seconds [static dependencies only]. Details - ImportResultOutputID=cad15aa69b4907d97caaa6b6121fcece DependenciesID=05614fd01afce1e009b9424e39ad2607 StaticDependenciesID=09376062d3123dcff7a3605148c734a4 
+Refreshing native plugins compatible for Editor in 11.42 ms, found 6 plugins.
+Asset Pipeline Refresh (id=3c5f48d7b78cdd643a20643b0d6a66ac): Total: 0.154 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: ffcd859b857b5be4fad7f14909be84b7 - Path: Assets/XR/Settings/OpenXR Package Settings.asset' with importer (NativeFormatImporter)
+Imported 'GUID: ffcd859b857b5be4fad7f14909be84b7' -> (Import Result ID: 'e82c35d9bdfeca4570c613faf30504b4') in 0.003 seconds [static dependencies only]. Details - ImportResultOutputID=cad15aa69b4907d97caaa6b6121fcece DependenciesID=da4a1b87809ead25c7c1568f899f14d3 StaticDependenciesID=90eda1b75880730c81a34fea5b7ea600 
+Refreshing native plugins compatible for Editor in 12.20 ms, found 6 plugins.
+Asset Pipeline Refresh (id=4199096331b48db449704d41d857bea6): Total: 0.056 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 9.83 ms, found 6 plugins.
+Asset Pipeline Refresh (id=4f6f3f7b92ba1694a8df8552afdabe48): Total: 0.040 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: 0bf21d40f043f444e836f1747ae35af2 - Path: Assets/Animations/EnemyAnimatorController.controller' with importer (NativeFormatImporter)
+Imported 'GUID: 0bf21d40f043f444e836f1747ae35af2' -> (Import Result ID: '6b2722c52734e5b8c115fb48d26757d5') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=8e2747a0b0bdab7263a5677839ee9b70 DependenciesID=904441a3b901f43f39057e7eb966e94a StaticDependenciesID=61825e764c733d8ad59a9f4b7435a3ab 
+Refreshing native plugins compatible for Editor in 10.63 ms, found 6 plugins.
+Asset Pipeline Refresh (id=b2ce5fbfba49fb3498e392ab2f04ecae): Total: 0.063 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 12.08 ms, found 6 plugins.
+Asset Pipeline Refresh (id=9fe8eefff03dc6c4c8fc70178e1ca202): Total: 0.074 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: 0af3635420011af4390ea54926630dd5 - Path: Assets/Animations/HandAnimatorController.controller' with importer (NativeFormatImporter)
+Imported 'GUID: 0af3635420011af4390ea54926630dd5' -> (Import Result ID: '546ea7ea71fd7f5e7ef8825315893723') in 0.003 seconds [static dependencies only]. Details - ImportResultOutputID=0d2525c17a9964ec81d1a5fa02f309b1 DependenciesID=91dc2b455ce2798774cbe3c7502257f6 StaticDependenciesID=622e5fe0f353720775bd7820238c8961 
+Refreshing native plugins compatible for Editor in 13.19 ms, found 6 plugins.
+Asset Pipeline Refresh (id=2871b8a1e25052b43926c204ab939390): Total: 0.082 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 12.30 ms, found 6 plugins.
+Asset Pipeline Refresh (id=4a0c9d48d91223545897ee7476c349f9): Total: 0.043 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: 90c4100c36d51244fa3c27169c69011c - Path: Assets/Input/VVRInputActions.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 90c4100c36d51244fa3c27169c69011c' -> (Import Result ID: '732152db3f3c87ab04edd9547ebb7680') in 0.003 seconds [static dependencies only]. Details - ImportResultOutputID=ad91b60e39c162152d0a14e7f42f9660 DependenciesID=b9910eb43aedb5a6f8ed2db3726b1b04 StaticDependenciesID=8d383ccb6193d53ac2a2d9bdce7c44ce 
+Refreshing native plugins compatible for Editor in 16.46 ms, found 6 plugins.
+Asset Pipeline Refresh (id=2257772deb2502a4cb5cb32c9186cfbb): Total: 0.112 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: 65a30458c724f5847ac95510a3229f32 - Path: Assets/Prefabs/Sword.prefab' with importer (PrefabImporter)
+Imported 'GUID: 65a30458c724f5847ac95510a3229f32' -> (Import Result ID: 'd42bac4798fb0465b618a5b86556dde3') in 0.135 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=88f7d4f3ec706fe594a06aea4792d298 DependenciesID=d903830d1554788436fcce1fc7773bf1 StaticDependenciesID=d944aedab739f1f7fd0da02d90160f10 
+Refreshing native plugins compatible for Editor in 13.83 ms, found 6 plugins.
+Asset Pipeline Refresh (id=5ab8c6ccadaeb394d8d4e2e7e5089537): Total: 0.190 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: 9c89ac6386f617e45ba1d897a7d63ace - Path: Assets/Prefabs/Axe.prefab' with importer (PrefabImporter)
+Imported 'GUID: 9c89ac6386f617e45ba1d897a7d63ace' -> (Import Result ID: 'cbaf073c55f80ff00a2441ce04ebb16f') in 0.018 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=490919156b94bd2f0130fb33a258b3da DependenciesID=dfde9ee67051026a3650747b186faf03 StaticDependenciesID=97c68c5e755736e499f1b3599a427f53 
+Refreshing native plugins compatible for Editor in 8.71 ms, found 6 plugins.
+Asset Pipeline Refresh (id=fa089e9ec00f31248a10c3e0a91a41c0): Total: 0.062 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: bd427b4077170e546a4a9291d7fe2288 - Path: Assets/Prefabs/Shield.prefab' with importer (PrefabImporter)
+Imported 'GUID: bd427b4077170e546a4a9291d7fe2288' -> (Import Result ID: 'f347ee9375c86a20f586f940374242c5') in 0.022 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=dfc8d58c3eee78a70856f9419043d3a1 DependenciesID=48b541b59f241a3618f6f4e28b78a87d StaticDependenciesID=2f6435e22d2af26c527707ed4b397793 
+Refreshing native plugins compatible for Editor in 9.67 ms, found 6 plugins.
+Asset Pipeline Refresh (id=43d6355bd13bf974983f54d1d4b9379a): Total: 0.067 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=9575394b6c4a55e4a850fe6ebf1bc5bf): Total: 0.021 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Licensing::Client] Successfully resolved entitlement details
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 153 unused Assets / (118.5 KB). Loaded Objects now: 3703.
+Memory consumption went from 269.8 MB to 269.7 MB.
+Total: 28.129100 ms (FindLiveObjects: 0.588600 ms CreateObjectMapping: 0.575400 ms MarkObjects: 25.629000 ms  DeleteObjects: 0.344100 ms)
+
+Importing 'GUID: 11ad92fc29988ef438ef6b511abff325 - Path: Assets/Materials/ArenaFloor.mat' with importer (NativeFormatImporter)
+Imported 'GUID: 11ad92fc29988ef438ef6b511abff325' -> (Import Result ID: '7a6a77241dc6a9437a8695f9a3bf173d') in 0.017 seconds [static dependencies only]. Details - ImportResultOutputID=e261bf1b7aa70d19142808e9524e088f DependenciesID=3709d709456a2d814adf92760ce199a6 StaticDependenciesID=8a2eeb077d3747ec9d4f2d2141895942 
+Importing 'GUID: 21021f62db60f4c44a83f9b0f67d695c - Path: Assets/Materials/ShieldWood.mat' with importer (NativeFormatImporter)
+Imported 'GUID: 21021f62db60f4c44a83f9b0f67d695c' -> (Import Result ID: '2dabb247246a5b5ab726105f81876c20') in 0.017 seconds [static dependencies only]. Details - ImportResultOutputID=f5bf035ea0cd1b842faa040139158522 DependenciesID=ec91b3bd5e371863de28fe43f7450f43 StaticDependenciesID=b61195314f36958f5c591094c1654487 
+Importing 'GUID: 91408fe4968b8034481ab137e384427d - Path: Assets/Materials/SteelBlade.mat' with importer (NativeFormatImporter)
+Imported 'GUID: 91408fe4968b8034481ab137e384427d' -> (Import Result ID: 'a9927798daf214cd48aaf0723d7e491d') in 0.016 seconds [static dependencies only]. Details - ImportResultOutputID=973bd5673b1e243b9fc28498e0870465 DependenciesID=65b10cb5e71ab64a76b2c487c88a00cc StaticDependenciesID=c9bfa7a58b13501022c6f502d6dfdfad 
+Importing 'GUID: a1acb72f74e84854aa62857ab5983138 - Path: Assets/Materials/PlayerHand.mat' with importer (NativeFormatImporter)
+Imported 'GUID: a1acb72f74e84854aa62857ab5983138' -> (Import Result ID: '85b519cfc90106587f35d2d25c29e279') in 0.015 seconds [static dependencies only]. Details - ImportResultOutputID=aca85d5cc7b7343416c8b1171e3c059a DependenciesID=710f9c6dc13787a3833dce3871d4f8ed StaticDependenciesID=0470f36c39aa22e4ed8495bafdde12ce 
+Importing 'GUID: 127cd13cd49bc9c428458615f266a6c6 - Path: Assets/Materials/WoodTimber.mat' with importer (NativeFormatImporter)
+Imported 'GUID: 127cd13cd49bc9c428458615f266a6c6' -> (Import Result ID: '54493733c9e57e70ab204f4e7ca9ee94') in 0.014 seconds [static dependencies only]. Details - ImportResultOutputID=3f1ab65a0c9cc9a0d91e3e97875316b6 DependenciesID=37ac35bd62e71fdc25fab6868c58f4cf StaticDependenciesID=023328a15a78da421c7cd2f17e51dd93 
+Importing 'GUID: 323adb17c7d6a914f9ece9e7f3111c57 - Path: Assets/Materials/EnemyTunic.mat' with importer (NativeFormatImporter)
+Imported 'GUID: 323adb17c7d6a914f9ece9e7f3111c57' -> (Import Result ID: '22ce7fd6b7a49c1644f19dbeeec6512c') in 0.016 seconds [static dependencies only]. Details - ImportResultOutputID=b0a7934501d922b1ad1a223681775c23 DependenciesID=fcfd53545d337fed96a5770365edc8d2 StaticDependenciesID=c9557ee72c5d4aa3c618587917af4dea 
+Importing 'GUID: 876e73de9f31e4e46bdfe49dede006ff - Path: Assets/Materials/TorchFlame.mat' with importer (NativeFormatImporter)
+Imported 'GUID: 876e73de9f31e4e46bdfe49dede006ff' -> (Import Result ID: 'fdb74363aa76dc0d830f1211aa8b7391') in 0.016 seconds [static dependencies only]. Details - ImportResultOutputID=69831e846944af698b8ee7b8df8fa824 DependenciesID=156c15fef14f6822bae46e2ea19a92ff StaticDependenciesID=3504451bcbc00ee843177f156af3ec7a 
+Importing 'GUID: a71bbe4af89db454da9d770986eb5d14 - Path: Assets/Materials/ArenaStone.mat' with importer (NativeFormatImporter)
+Imported 'GUID: a71bbe4af89db454da9d770986eb5d14' -> (Import Result ID: '27e617523c532b5d36aaceb144ea242b') in 0.017 seconds [static dependencies only]. Details - ImportResultOutputID=2ad35dc05fbcb085155ecfbf79752066 DependenciesID=464340605392a54f23171aa6e372b3b3 StaticDependenciesID=af8216a58d7c11e1ba09810898d5a23b 
+Importing 'GUID: 4bc37bb036cdf304790f1b4c0bed7636 - Path: Assets/Materials/DarkIron.mat' with importer (NativeFormatImporter)
+Imported 'GUID: 4bc37bb036cdf304790f1b4c0bed7636' -> (Import Result ID: 'f54919016107dc3f3456627d0aec8186') in 0.017 seconds [static dependencies only]. Details - ImportResultOutputID=6ef35122d16f6b001f9c3ef1d17ab8a0 DependenciesID=801481da8fc2f8eab06e69a0f99dd76d StaticDependenciesID=4db1c5b7fb503c3d04e9c4d588b6ae4e 
+Importing 'GUID: 9c5aba3f8fa61f842aad8276cf7aab91 - Path: Assets/Materials/BloodRed.mat' with importer (NativeFormatImporter)
+Imported 'GUID: 9c5aba3f8fa61f842aad8276cf7aab91' -> (Import Result ID: 'f23478fa8b62e589840b4cd1bca26f14') in 0.018 seconds [static dependencies only]. Details - ImportResultOutputID=622dc3ee213b5114331e1116dd3585c9 DependenciesID=cdd15b07a58ba5869cfb78202c9ec8ef StaticDependenciesID=d56b021d5579d0bbc4a4a53800310e1d 
+Importing 'GUID: ad8680c49f1595147bea9767d33b2506 - Path: Assets/Materials/EnemySkin.mat' with importer (NativeFormatImporter)
+Imported 'GUID: ad8680c49f1595147bea9767d33b2506' -> (Import Result ID: '3a6ce81e829eca3b71c40da19cf5fedc') in 0.018 seconds [static dependencies only]. Details - ImportResultOutputID=76542eea66df233f3e589e20a3794176 DependenciesID=5a2852059e965e364961633c0aade864 StaticDependenciesID=5515e2a9cc8ccee56753ddf5dca76dd0 
+Importing 'GUID: 0af3635420011af4390ea54926630dd5 - Path: Assets/Animations/HandAnimatorController.controller' with importer (NativeFormatImporter)
+Imported 'GUID: 0af3635420011af4390ea54926630dd5' -> (Import Result ID: '783ff6fa6a2d7f37cfc8460ef798f32b') in 0.003 seconds [static dependencies only]. Details - ImportResultOutputID=0d2525c17a9964ec81d1a5fa02f309b1 DependenciesID=d0eb5626db3c55cc2e0378afa0db1ff1 StaticDependenciesID=e5e7e653032f28b96671dc9e0865fd8f 
+Importing 'GUID: 0bf21d40f043f444e836f1747ae35af2 - Path: Assets/Animations/EnemyAnimatorController.controller' with importer (NativeFormatImporter)
+Imported 'GUID: 0bf21d40f043f444e836f1747ae35af2' -> (Import Result ID: 'd642609bcdbce535f57a80c38ed2730c') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=8e2747a0b0bdab7263a5677839ee9b70 DependenciesID=55c32e8c9b94c231bbcadbdca3f09a80 StaticDependenciesID=e4f5cf1a94f7030612499c38a56e51bf 
+Importing 'GUID: 90c4100c36d51244fa3c27169c69011c - Path: Assets/Input/VVRInputActions.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 90c4100c36d51244fa3c27169c69011c' -> (Import Result ID: '732152db3f3c87ab04edd9547ebb7680') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=ad91b60e39c162152d0a14e7f42f9660 DependenciesID=b9910eb43aedb5a6f8ed2db3726b1b04 StaticDependenciesID=8d383ccb6193d53ac2a2d9bdce7c44ce 
+Refreshing native plugins compatible for Editor in 14.39 ms, found 6 plugins.
+Asset Pipeline Refresh (id=5d68eef24142a7b4986d4ce1289d8858): Total: 0.273 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
 Importing 'GUID: 6dcc908dcb8c8a347a3e083cf28553db - Path: Assets/Scenes/VikingArena.unity' with importer (DefaultImporter)
-Imported 'GUID: 6dcc908dcb8c8a347a3e083cf28553db' -> (Import Result ID: 'f854cc2ff8ed92d717f206fbb2ff2df5') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=4de355039f5980be678ead228581928e DependenciesID=b077e24a55c9e879adaacd13b47878c0 StaticDependenciesID=49bfec5deadf7ae2744a75a4c8ced634 
-Refreshing native plugins compatible for Editor in 7.00 ms, found 6 plugins.
-Asset Pipeline Refresh (id=cc883d48e5e0cbb41b5df9c8023030d2): Total: 0.044 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Imported 'GUID: 6dcc908dcb8c8a347a3e083cf28553db' -> (Import Result ID: '57cd1cbc105bad14caa8d589001ecb01') in 0.014 seconds [static dependencies only]. Details - ImportResultOutputID=4de355039f5980be678ead228581928e DependenciesID=7dd205b3877b80b519c0fd2f31880d1a StaticDependenciesID=255a92a16b480ad91ec1859275ff5e6d 
+Refreshing native plugins compatible for Editor in 12.55 ms, found 6 plugins.
+Asset Pipeline Refresh (id=191ac993b55a6ec45b9d67900367a40d): Total: 0.061 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
 [VVRProjectSetup] Saved scene screenshots to C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Screenshots
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -596,20 +514,17 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
 UnityEngine.Logger:Log (UnityEngine.LogType,object)
 UnityEngine.Debug:Log (object)
-VVRProjectSetup:CaptureArenaScreenshots (UnityEngine.GameObject) (at Assets/Editor/VVRProjectSetup.cs:923)
-VVRProjectSetup:BuildVikingArenaScene (System.Collections.Generic.Dictionary`2<string, UnityEngine.Material>,UnityEditor.Animations.AnimatorController,UnityEngine.InputSystem.InputActionAsset,UnityEngine.GameObject,UnityEngine.GameObject,UnityEngine.GameObject,UnityEngine.GameObject) (at Assets/Editor/VVRProjectSetup.cs:773)
-VVRProjectSetup:BuildCompleteVerticalSlice () (at Assets/Editor/VVRProjectSetup.cs:51)
+VVRProjectSetup:CaptureArenaScreenshots (UnityEngine.GameObject) (at Assets/Editor/VVRProjectSetup.cs:1136)
+VVRProjectSetup:BuildVikingArenaScene (System.Collections.Generic.Dictionary`2<string, UnityEngine.Material>,UnityEditor.Animations.AnimatorController,UnityEngine.InputSystem.InputActionAsset,UnityEngine.GameObject,UnityEngine.GameObject,UnityEngine.GameObject,UnityEngine.GameObject) (at Assets/Editor/VVRProjectSetup.cs:960)
+VVRProjectSetup:BuildCompleteVerticalSlice () (at Assets/Editor/VVRProjectSetup.cs:60)
 
-(Filename: Assets/Editor/VVRProjectSetup.cs Line: 923)
+(Filename: Assets/Editor/VVRProjectSetup.cs Line: 1136)
 
-AcceleratorClientConnectionCallback - disconnected - :0
-Importing 'GUID: 0000000000000000b000000000000000 - Path: ProjectSettings/EditorBuildSettings.asset' with importer (LibraryAssetImporter)
-Imported 'GUID: 0000000000000000b000000000000000' -> (Import Result ID: 'd6d21d6856aa2b1f650844ded5b702ca') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=0a89a5c5f492143e0fa186859e17ba6f DependenciesID=64f08d50de136bccea28b57d8d8742b3 StaticDependenciesID=51df2a094ab41df6f2ee7a871b2bb3ec 
 Importing 'GUID: 876e73de9f31e4e46bdfe49dede006ff - Path: Assets/Materials/TorchFlame.mat' with importer (NativeFormatImporter)
 Imported 'GUID: 876e73de9f31e4e46bdfe49dede006ff' -> (Import Result ID: 'ca73690fc011c0359f30f448ccc6a84a') in 0.003 seconds [static dependencies only]. Details - ImportResultOutputID=69831e846944af698b8ee7b8df8fa824 DependenciesID=9a509c3ba1949e518d75f37859156b93 StaticDependenciesID=b9944619e9f7d3bd9e14503a8d396398 
-Refreshing native plugins compatible for Editor in 19.61 ms, found 6 plugins.
-Asset Pipeline Refresh (id=8b037ec270a388748897cde775bd0e71): Total: 0.071 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Asset Pipeline Refresh (id=ffdebe0b1c60b8e47947eed8e48cc94a): Total: 0.032 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 12.09 ms, found 6 plugins.
+Asset Pipeline Refresh (id=ccd8c81105f34ad4bafdddaaa439fbe9): Total: 0.048 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=9ee7ab282e4cd234a96820e02ff73ed9): Total: 0.036 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
 [VVRProjectSetup] VVR-Arena Complete Vertical Slice Build Succeeded!
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -617,19 +532,16 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
 UnityEngine.Logger:Log (UnityEngine.LogType,object)
 UnityEngine.Debug:Log (object)
-VVRProjectSetup:BuildCompleteVerticalSlice () (at Assets/Editor/VVRProjectSetup.cs:63)
+VVRProjectSetup:BuildCompleteVerticalSlice () (at Assets/Editor/VVRProjectSetup.cs:72)
 
-(Filename: Assets/Editor/VVRProjectSetup.cs Line: 63)
+(Filename: Assets/Editor/VVRProjectSetup.cs Line: 72)
 
-<RI> Initializing input.
-Using Windows.Gaming.Input
-<RI> Input initialized.
 Batchmode quit successfully invoked - shutting down!
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
 Input System module state changed to: ShutdownInProgress.
 Input Polling Thread exited.
 Input System module state changed to: Shutdown.
-[Physics::Module] Cleanup current backend.
-[Physics::Module] Id: 0xf2b8ea05
 [Licensing::IpcConnector] LicenseClient-aresg-notifications channel disconnected successfully.
 [Licensing::IpcConnector] LicenseClient-aresg channel disconnected successfully.
 Lingering sessions upon destruction of worker manager

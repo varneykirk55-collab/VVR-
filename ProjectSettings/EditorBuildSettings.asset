@@ -9,4 +9,5 @@ EditorBuildSettings:
     path: Assets/Scenes/VikingArena.unity
     guid: 6dcc908dcb8c8a347a3e083cf28553db
   m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1b606b37c1d2d6e4398773503027e26c, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: ffcd859b857b5be4fad7f14909be84b7, type: 2}

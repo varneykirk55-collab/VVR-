@@ -20,7 +20,7 @@ MonoBehaviour:
     - m_Name: Position
       m_Type: 0
       m_ExpectedControlType: Vector3
-      m_Id: 6ecbb5f2-be83-4c23-a497-9efd2b2a6f61
+      m_Id: fe28c44a-706d-444a-a1bb-b6a4b4179d58
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -29,7 +29,7 @@ MonoBehaviour:
     - m_Name: Rotation
       m_Type: 0
       m_ExpectedControlType: Quaternion
-      m_Id: a3289313-8b09-49f0-979b-1cdb8a70ab54
+      m_Id: 1b2f1586-a701-4592-8d15-68166f1b2a98
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -37,7 +37,7 @@ MonoBehaviour:
       m_Priority: 0
     m_Bindings:
     - m_Name: 
-      m_Id: 560b46c3-3b4c-4dee-9cd1-2ac962f19861
+      m_Id: aebe5068-b741-4fc9-9e93-a54920914704
       m_Path: <XRHMD>/centerEyePosition
       m_Interactions: 
       m_Processors: 
@@ -45,7 +45,7 @@ MonoBehaviour:
       m_Action: Position
       m_Flags: 0
     - m_Name: 
-      m_Id: 209430a5-c9b3-4400-bd08-0aefa097bf10
+      m_Id: 6d21d21c-aa19-476c-bd6e-bf9c609db8f0
       m_Path: <XRHMD>/centerEyeRotation
       m_Interactions: 
       m_Processors: 
@@ -59,7 +59,7 @@ MonoBehaviour:
     - m_Name: Position
       m_Type: 0
       m_ExpectedControlType: Vector3
-      m_Id: 0094d32a-9f0b-4123-8eba-06d63bbffee1
+      m_Id: d0479b17-f423-495c-bea0-58040c2defb1
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -68,7 +68,7 @@ MonoBehaviour:
     - m_Name: Rotation
       m_Type: 0
       m_ExpectedControlType: Quaternion
-      m_Id: 2ad7f6c6-6050-4336-a6cc-8eed9f569077
+      m_Id: cf475702-6993-4f97-b2eb-b157f9728fcd
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -77,7 +77,7 @@ MonoBehaviour:
     - m_Name: Select
       m_Type: 1
       m_ExpectedControlType: 
-      m_Id: dfea2ca0-fd4a-4647-8002-6334e95b8594
+      m_Id: d2c5bfe2-1434-4c82-b0b1-595e64936156
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -86,7 +86,7 @@ MonoBehaviour:
     - m_Name: Activate
       m_Type: 1
       m_ExpectedControlType: 
-      m_Id: 82a23a5a-38cc-4e97-99e0-44ad93e7f6aa
+      m_Id: b71eb153-4616-44d9-ab00-e1913d59fa91
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -95,7 +95,7 @@ MonoBehaviour:
     - m_Name: PinchValue
       m_Type: 0
       m_ExpectedControlType: Axis
-      m_Id: 8aec699a-c3aa-4fc5-91fe-d652167bcd29
+      m_Id: 6b2c56fd-2f52-411f-a029-f27081e2a62d
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -104,7 +104,16 @@ MonoBehaviour:
     - m_Name: GripValue
       m_Type: 0
       m_ExpectedControlType: Axis
-      m_Id: 872b1556-665e-4457-8e45-08253ab98ef7
+      m_Id: 02afb8fa-d56b-47f6-919f-3792801c43b2
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+      m_Priority: 0
+    - m_Name: Haptic
+      m_Type: 2
+      m_ExpectedControlType: Haptic
+      m_Id: f0e64862-6be7-4669-ad9a-0155dbc9e186
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -112,7 +121,7 @@ MonoBehaviour:
       m_Priority: 0
     m_Bindings:
     - m_Name: 
-      m_Id: 70396c91-e88b-4c1a-a1ff-3b7da2733631
+      m_Id: 395269f7-083b-4164-80d1-753fc5e41a68
       m_Path: <XRController>{LeftHand}/devicePosition
       m_Interactions: 
       m_Processors: 
@@ -120,7 +129,7 @@ MonoBehaviour:
       m_Action: Position
       m_Flags: 0
     - m_Name: 
-      m_Id: da612a0b-62b2-491e-8232-8694d992b47e
+      m_Id: 02592ad6-4da2-49f2-80fc-e05aa5ae1b90
       m_Path: <XRController>{LeftHand}/deviceRotation
       m_Interactions: 
       m_Processors: 
@@ -128,7 +137,7 @@ MonoBehaviour:
       m_Action: Rotation
       m_Flags: 0
     - m_Name: 
-      m_Id: 75a295e7-96d1-4d12-b6e4-f54a70ac91f8
+      m_Id: 8ddff649-86d5-4f01-afed-632c71cd7609
       m_Path: <XRController>{LeftHand}/gripPressed
       m_Interactions: 
       m_Processors: 
@@ -136,7 +145,7 @@ MonoBehaviour:
       m_Action: Select
       m_Flags: 0
     - m_Name: 
-      m_Id: f6acb333-c66d-4d10-8709-a806047f5e7a
+      m_Id: 8b31e9a1-ccc5-45dd-b79b-28fbf400db48
       m_Path: <XRController>{LeftHand}/triggerPressed
       m_Interactions: 
       m_Processors: 
@@ -144,7 +153,7 @@ MonoBehaviour:
       m_Action: Activate
       m_Flags: 0
     - m_Name: 
-      m_Id: d344c318-6e68-4fc2-b0f7-f1c8218bb24e
+      m_Id: 07dc0436-2bd5-467b-97f5-be0b1b6c6401
       m_Path: <XRController>{LeftHand}/trigger
       m_Interactions: 
       m_Processors: 
@@ -152,12 +161,20 @@ MonoBehaviour:
       m_Action: PinchValue
       m_Flags: 0
     - m_Name: 
-      m_Id: ec84494e-8738-4091-9eb7-1cc5f93c5bab
+      m_Id: e1e53fc5-3b78-4803-9ebe-e90374a9b1ce
       m_Path: <XRController>{LeftHand}/grip
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: GripValue
+      m_Flags: 0
+    - m_Name: 
+      m_Id: b968987a-c628-4afd-b3d8-6d8cae03a017
+      m_Path: <XRController>{LeftHand}/haptic
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Haptic
       m_Flags: 0
   - m_Name: XRRightHand
     m_Id: 
@@ -166,7 +183,7 @@ MonoBehaviour:
     - m_Name: Position
       m_Type: 0
       m_ExpectedControlType: Vector3
-      m_Id: 9dda350f-0bc9-448c-8577-059f664bb068
+      m_Id: 5ef7e5ee-edc9-413c-98a4-ef41e74a954f
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -175,7 +192,7 @@ MonoBehaviour:
     - m_Name: Rotation
       m_Type: 0
       m_ExpectedControlType: Quaternion
-      m_Id: b20019d7-72d4-483f-8614-ff0698a09589
+      m_Id: 86e00084-5f1c-49ac-a4dd-0fee5ed1ea18
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -184,7 +201,7 @@ MonoBehaviour:
     - m_Name: Select
       m_Type: 1
       m_ExpectedControlType: 
-      m_Id: b7db2ad2-9b91-4c74-90b3-e332976b601e
+      m_Id: 7822200e-24cc-4948-a83f-492407056507
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -193,7 +210,7 @@ MonoBehaviour:
     - m_Name: Activate
       m_Type: 1
       m_ExpectedControlType: 
-      m_Id: fa92cd6b-feb6-4765-a0ae-64e1b319494b
+      m_Id: c065d414-d9bc-456f-b949-b8fbf79c1c36
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -202,7 +219,7 @@ MonoBehaviour:
     - m_Name: PinchValue
       m_Type: 0
       m_ExpectedControlType: Axis
-      m_Id: b3263313-627e-460d-809b-946c43134a73
+      m_Id: b48082cd-c607-4f39-bf5a-bfb89e5ca7f7
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -211,7 +228,16 @@ MonoBehaviour:
     - m_Name: GripValue
       m_Type: 0
       m_ExpectedControlType: Axis
-      m_Id: ee4390b7-46e7-4d6c-a538-1c2502731e71
+      m_Id: 025fac90-867b-4a9d-9bdd-5c7547db288d
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+      m_Priority: 0
+    - m_Name: Haptic
+      m_Type: 2
+      m_ExpectedControlType: Haptic
+      m_Id: 6fa20bf3-6e2c-4ab8-9f3b-f6a7cfb7e15b
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -219,7 +245,7 @@ MonoBehaviour:
       m_Priority: 0
     m_Bindings:
     - m_Name: 
-      m_Id: 3893d3db-7949-4373-b9fd-b7d52fa500c3
+      m_Id: 943e05a3-0475-4007-a063-107d45ccaa28
       m_Path: <XRController>{RightHand}/devicePosition
       m_Interactions: 
       m_Processors: 
@@ -227,7 +253,7 @@ MonoBehaviour:
       m_Action: Position
       m_Flags: 0
     - m_Name: 
-      m_Id: 488d9508-86ed-49f9-b431-e69a718cbc29
+      m_Id: 43e419c3-574d-4e59-a194-82470222d15a
       m_Path: <XRController>{RightHand}/deviceRotation
       m_Interactions: 
       m_Processors: 
@@ -235,7 +261,7 @@ MonoBehaviour:
       m_Action: Rotation
       m_Flags: 0
     - m_Name: 
-      m_Id: be834d0c-f161-438a-b678-adf49edbf7ba
+      m_Id: 19f9521d-3f44-4a90-8aca-8034ff7c1100
       m_Path: <XRController>{RightHand}/gripPressed
       m_Interactions: 
       m_Processors: 
@@ -243,7 +269,7 @@ MonoBehaviour:
       m_Action: Select
       m_Flags: 0
     - m_Name: 
-      m_Id: c956008c-8d91-41b0-b126-0395c50934f0
+      m_Id: 81cbb378-602a-49b0-acea-b14e56e347e1
       m_Path: <XRController>{RightHand}/triggerPressed
       m_Interactions: 
       m_Processors: 
@@ -251,7 +277,7 @@ MonoBehaviour:
       m_Action: Activate
       m_Flags: 0
     - m_Name: 
-      m_Id: d58fd870-adca-40ec-b742-89aa05d3be5c
+      m_Id: 0fafa464-3036-496e-b611-b301ab8824c2
       m_Path: <XRController>{RightHand}/trigger
       m_Interactions: 
       m_Processors: 
@@ -259,12 +285,20 @@ MonoBehaviour:
       m_Action: PinchValue
       m_Flags: 0
     - m_Name: 
-      m_Id: 2ef5fc86-be9a-447a-873e-2f13e7810eaa
+      m_Id: 8e6a4a8b-09d4-41e9-9be2-984d224b17a7
       m_Path: <XRController>{RightHand}/grip
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: GripValue
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 149aefeb-49e6-4e24-a9f5-a1c1ba486276
+      m_Path: <XRController>{RightHand}/haptic
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Haptic
       m_Flags: 0
   m_ControlSchemes: []
   m_IsProjectWide: 0

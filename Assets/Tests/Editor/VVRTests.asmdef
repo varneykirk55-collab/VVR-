@@ -13,7 +13,11 @@
         "Unity.XR.CoreUtils",
         "Unity.AI.Navigation",
         "Unity.XR.OpenXR",
-        "Unity.XR.Management"
+        "Unity.XR.OpenXR.Editor",
+        "Unity.XR.OpenXR.Features.MetaQuestSupport",
+        "Unity.XR.OpenXR.Features.OculusQuestSupport",
+        "Unity.XR.Management",
+        "Unity.XR.Management.Editor"
     ],
     "includePlatforms": [
         "Editor"
