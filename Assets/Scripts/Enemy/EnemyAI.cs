@@ -5,78 +5,177 @@ using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(EnemyHealth))]
 public class EnemyAI : MonoBehaviour
 {
     public Transform target;
     public float attackRange = 2f;
     public float attackCooldown = 2f;
+    public float moveSpeed = 2.5f;
+    public EnemyWeapon enemyWeapon;
 
     private NavMeshAgent agent;
     private Animator animator;
     private EnemyHealth health;
-    private float lastAttackTime;
+    private float lastAttackTime = -999f;
     private bool isDead = false;
+    private Coroutine attackWindowCoroutine;
 
-    void Start()
+    void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         health = GetComponent<EnemyHealth>();
+        if (enemyWeapon == null)
+        {
+            enemyWeapon = GetComponentInChildren<EnemyWeapon>();
+        }
+    }
 
+    void Start()
+    {
         if (target == null)
         {
-            // Find player if not assigned
             GameObject player = GameObject.FindGameObjectWithTag("Player");
-            if (player != null) target = player.transform;
+            if (player != null)
+            {
+                target = player.transform;
+            }
+            else if (PlayerHealth.Instance != null)
+            {
+                target = PlayerHealth.Instance.transform;
+            }
         }
 
-        health.OnDeath.AddListener(HandleDeath);
+        if (health != null)
+        {
+            health.OnDeath.AddListener(HandleDeath);
+        }
     }
 
     void Update()
     {
         if (isDead || target == null) return;
 
-        float distanceToTarget = Vector3.Distance(transform.position, target.position);
+        // Calculate horizontal (XZ plane) distance so VR headset height offset doesn't skew melee range
+        Vector3 flatSelf = new Vector3(transform.position.x, 0f, transform.position.z);
+        Vector3 flatTarget = new Vector3(target.position.x, 0f, target.position.z);
+        float distanceToTarget = Vector3.Distance(flatSelf, flatTarget);
+
+        bool canUseNavMesh = agent != null && agent.enabled && agent.isOnNavMesh;
 
         if (distanceToTarget <= attackRange)
         {
-            agent.isStopped = true;
-            animator.SetFloat("Speed", 0);
+            if (canUseNavMesh)
+            {
+                agent.isStopped = true;
+            }
+            if (animator != null && animator.runtimeAnimatorController != null)
+            {
+                animator.SetFloat("Speed", 0f);
+            }
 
-            // Face target
-            Vector3 direction = (target.position - transform.position).normalized;
-            direction.y = 0;
+            // Face target horizontally
+            Vector3 direction = (flatTarget - flatSelf).normalized;
             if (direction != Vector3.zero)
             {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * 5f);
             }
 
-            if (Time.time > lastAttackTime + attackCooldown)
+            if (Time.time >= lastAttackTime + attackCooldown)
             {
                 Attack();
             }
         }
         else
         {
-            agent.isStopped = false;
-            agent.SetDestination(target.position);
-            animator.SetFloat("Speed", agent.velocity.magnitude);
+            Vector3 direction = (flatTarget - flatSelf).normalized;
+            if (canUseNavMesh)
+            {
+                agent.isStopped = false;
+                agent.SetDestination(target.position);
+                if (animator != null && animator.runtimeAnimatorController != null)
+                {
+                    animator.SetFloat("Speed", agent.velocity.magnitude);
+                }
+            }
+            else
+            {
+                // Fallback direct movement if NavMesh is not baked in a test scene
+                transform.position += direction * (moveSpeed * Time.deltaTime);
+                if (direction != Vector3.zero)
+                {
+                    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * 5f);
+                }
+                if (animator != null && animator.runtimeAnimatorController != null)
+                {
+                    animator.SetFloat("Speed", moveSpeed);
+                }
+            }
         }
     }
 
-    void Attack()
+    public void Attack()
     {
-        animator.SetTrigger("Attack");
+        if (isDead) return;
+
+        if (animator != null && animator.runtimeAnimatorController != null)
+        {
+            animator.SetTrigger("Attack");
+        }
         lastAttackTime = Time.time;
+
+        if (enemyWeapon != null)
+        {
+            if (attackWindowCoroutine != null)
+            {
+                StopCoroutine(attackWindowCoroutine);
+            }
+            attackWindowCoroutine = StartCoroutine(AttackDamageWindowRoutine());
+        }
+    }
+
+    private IEnumerator AttackDamageWindowRoutine()
+    {
+        yield return new WaitForSeconds(0.15f);
+        if (!isDead && enemyWeapon != null)
+        {
+            enemyWeapon.EnableDamage();
+        }
+        yield return new WaitForSeconds(0.45f);
+        if (enemyWeapon != null)
+        {
+            enemyWeapon.DisableDamage();
+        }
     }
 
     void HandleDeath()
     {
+        if (isDead) return;
         isDead = true;
-        agent.isStopped = true;
-        agent.enabled = false;
-        animator.SetTrigger("Die");
+
+        if (attackWindowCoroutine != null)
+        {
+            StopCoroutine(attackWindowCoroutine);
+        }
+        if (enemyWeapon != null)
+        {
+            enemyWeapon.DisableDamage();
+        }
+
+        if (agent != null)
+        {
+            if (agent.enabled && agent.isOnNavMesh)
+            {
+                agent.isStopped = true;
+            }
+            agent.enabled = false;
+        }
+
+        if (animator != null && animator.runtimeAnimatorController != null)
+        {
+            animator.SetTrigger("Die");
+        }
 
         // Disable collisions
         Collider[] colliders = GetComponentsInChildren<Collider>();

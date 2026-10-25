@@ -12,8 +12,10 @@ public class WaveManager : MonoBehaviour
     public GameObject[] enemyPrefabs;
     public Transform[] spawnPoints;
     public float timeBetweenWaves = 5f;
+    public float spawnStaggerDelay = 1f;
     public int baseEnemiesPerWave = 3;
     public float difficultyMultiplier = 1.5f;
+    public int maxWaves = 0; // 0 = endless waves; > 0 triggers victory after maxWaves
 
     [Header("UI References")]
     public TextMeshProUGUI waveText;
@@ -22,33 +24,66 @@ public class WaveManager : MonoBehaviour
 
     private int currentWave = 0;
     private int enemiesAlive = 0;
+    private int enemiesRemainingToSpawn = 0;
     private int totalKills = 0;
     private bool isWaveActive = false;
+    private bool isTransitioningWave = false;
+    private Coroutine waveCoroutine;
 
-    public UnityEvent OnWaveStart;
-    public UnityEvent OnWaveEnd;
+    public int CurrentWave => currentWave;
+    public int EnemiesAlive => enemiesAlive;
+    public int EnemiesRemainingToSpawn => enemiesRemainingToSpawn;
+    public int TotalKills => totalKills;
+    public bool IsWaveActive => isWaveActive;
+
+    public UnityEvent OnWaveStart = new UnityEvent();
+    public UnityEvent OnWaveEnd = new UnityEvent();
+    public UnityEvent OnAllWavesCompleted = new UnityEvent();
 
     void Awake()
     {
         if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        else if (Instance != this) Destroy(gameObject);
     }
 
     public void StartGame()
     {
+        StopWaves();
         currentWave = 0;
+        enemiesAlive = 0;
+        enemiesRemainingToSpawn = 0;
         totalKills = 0;
         UpdateUI();
-        StartCoroutine(StartNextWave());
+        waveCoroutine = StartCoroutine(StartNextWave());
+    }
+
+    public void StopWaves()
+    {
+        if (waveCoroutine != null)
+        {
+            StopCoroutine(waveCoroutine);
+            waveCoroutine = null;
+        }
+        isWaveActive = false;
+        isTransitioningWave = false;
+        enemiesRemainingToSpawn = 0;
     }
 
     IEnumerator StartNextWave()
     {
         isWaveActive = false;
-        yield return new WaitForSeconds(timeBetweenWaves);
+        isTransitioningWave = true;
+
+        if (timeBetweenWaves > 0f)
+        {
+            yield return new WaitForSeconds(timeBetweenWaves);
+        }
 
         currentWave++;
-        int enemiesToSpawn = Mathf.RoundToInt(baseEnemiesPerWave * Mathf.Pow(difficultyMultiplier, currentWave - 1));
+        int enemiesToSpawn = Mathf.Max(1, Mathf.RoundToInt(baseEnemiesPerWave * Mathf.Pow(difficultyMultiplier, currentWave - 1)));
+        enemiesRemainingToSpawn = enemiesToSpawn;
+        isWaveActive = true;
+        isTransitioningWave = false;
 
         OnWaveStart?.Invoke();
         UpdateUI();
@@ -56,41 +91,72 @@ public class WaveManager : MonoBehaviour
         for (int i = 0; i < enemiesToSpawn; i++)
         {
             SpawnEnemy();
-            yield return new WaitForSeconds(1f); // Stagger spawning
+            enemiesRemainingToSpawn = Mathf.Max(0, enemiesRemainingToSpawn - 1);
+            UpdateUI();
+
+            if (i < enemiesToSpawn - 1 && spawnStaggerDelay > 0f)
+            {
+                yield return new WaitForSeconds(spawnStaggerDelay);
+            }
         }
 
-        isWaveActive = true;
+        // Check if all enemies were already defeated during the staggered spawning loop
+        CheckWaveCompletion();
     }
 
-    void SpawnEnemy()
+    public GameObject SpawnEnemy()
     {
-        if (enemyPrefabs.Length == 0 || spawnPoints.Length == 0) return;
+        if (enemyPrefabs == null || enemyPrefabs.Length == 0 || spawnPoints == null || spawnPoints.Length == 0)
+        {
+            return null;
+        }
 
         GameObject prefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        if (prefab == null || spawnPoint == null) return null;
 
-        Instantiate(prefab, spawnPoint.position, spawnPoint.rotation);
+        GameObject spawned = Instantiate(prefab, spawnPoint.position, spawnPoint.rotation);
         enemiesAlive++;
         UpdateUI();
+        return spawned;
     }
 
     public void EnemyDefeated()
     {
-        enemiesAlive--;
+        enemiesAlive = Mathf.Max(0, enemiesAlive - 1);
         totalKills++;
         UpdateUI();
 
-        if (isWaveActive && enemiesAlive <= 0)
+        CheckWaveCompletion();
+    }
+
+    private void CheckWaveCompletion()
+    {
+        if (isWaveActive && !isTransitioningWave && enemiesRemainingToSpawn <= 0 && enemiesAlive <= 0)
         {
+            isWaveActive = false;
             OnWaveEnd?.Invoke();
-            StartCoroutine(StartNextWave());
+
+            if (maxWaves > 0 && currentWave >= maxWaves)
+            {
+                OnAllWavesCompleted?.Invoke();
+                if (GameManager.Instance != null)
+                {
+                    GameManager.Instance.Victory();
+                }
+            }
+            else
+            {
+                waveCoroutine = StartCoroutine(StartNextWave());
+            }
         }
     }
 
-    void UpdateUI()
+    public void UpdateUI()
     {
+        int totalRemainingInWave = enemiesAlive + enemiesRemainingToSpawn;
         if (waveText != null) waveText.text = $"Wave: {currentWave}";
-        if (enemiesLeftText != null) enemiesLeftText.text = $"Enemies: {enemiesAlive}";
+        if (enemiesLeftText != null) enemiesLeftText.text = $"Enemies: {totalRemainingInWave}";
         if (killCountText != null) killCountText.text = $"Kills: {totalKills}";
     }
 }

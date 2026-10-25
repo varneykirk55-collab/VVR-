@@ -9,15 +9,16 @@ public class GameManager : MonoBehaviour
 
     public PlayerHealth playerHealth;
     public GameObject gameOverCanvas;
-    public GameObject victoryCanvas; // If there's an end condition
+    public GameObject victoryCanvas;
     public WaveManager waveManager;
 
     private bool isGameOver = false;
+    public bool IsGameOver => isGameOver;
 
     void Awake()
     {
         if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        else if (Instance != this) Destroy(gameObject);
     }
 
     void Start()
@@ -25,8 +26,23 @@ public class GameManager : MonoBehaviour
         if (gameOverCanvas != null) gameOverCanvas.SetActive(false);
         if (victoryCanvas != null) victoryCanvas.SetActive(false);
 
+        if (playerHealth == null)
+        {
+            playerHealth = PlayerHealth.Instance != null
+                ? PlayerHealth.Instance
+                : Object.FindAnyObjectByType<PlayerHealth>();
+        }
+
+        if (waveManager == null)
+        {
+            waveManager = WaveManager.Instance != null
+                ? WaveManager.Instance
+                : Object.FindAnyObjectByType<WaveManager>();
+        }
+
         if (playerHealth != null)
         {
+            playerHealth.OnDeath.RemoveListener(GameOver);
             playerHealth.OnDeath.AddListener(GameOver);
         }
 
@@ -42,17 +58,45 @@ public class GameManager : MonoBehaviour
         if (isGameOver) return;
         isGameOver = true;
 
+        if (waveManager != null)
+        {
+            waveManager.StopWaves();
+        }
+
         if (gameOverCanvas != null)
         {
             gameOverCanvas.SetActive(true);
         }
+    }
 
-        // Disable player input or mechanics if necessary
+    public void Victory()
+    {
+        if (isGameOver) return;
+        isGameOver = true;
+
+        if (waveManager != null)
+        {
+            waveManager.StopWaves();
+        }
+
+        if (victoryCanvas != null)
+        {
+            victoryCanvas.SetActive(true);
+        }
     }
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        isGameOver = false;
+        Scene activeScene = SceneManager.GetActiveScene();
+        if (activeScene.buildIndex >= 0)
+        {
+            SceneManager.LoadScene(activeScene.buildIndex);
+        }
+        else if (!string.IsNullOrEmpty(activeScene.name))
+        {
+            SceneManager.LoadScene(activeScene.name);
+        }
     }
 
     public void QuitGame()

@@ -1,11 +1,15 @@
 {
     "name": "VVR",
-    "rootNamespace": "VVR",
+    "rootNamespace": "",
     "references": [
         "Unity.InputSystem",
         "Unity.TextMeshPro",
+        "UnityEngine.UI",
         "Unity.XR.Interaction.Toolkit",
-        "Unity.XR.CoreUtils"
+        "Unity.XR.CoreUtils",
+        "Unity.AI.Navigation",
+        "Unity.XR.OpenXR",
+        "Unity.XR.Management"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

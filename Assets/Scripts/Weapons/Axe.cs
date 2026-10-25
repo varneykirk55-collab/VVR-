@@ -5,11 +5,16 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Axe : Weapon
 {
-    public Transform axeHead; // Point where damage is calculated from
-    public LayerMask enemyLayer;
+    public Transform axeHead; // Point where damage and velocity are calculated from
+    public LayerMask enemyLayer = ~0;
     public float swingCooldown = 0.6f;
 
     private Dictionary<Collider, float> hitCooldowns = new Dictionary<Collider, float>();
+
+    protected override Transform GetVelocityReferenceTransform()
+    {
+        return axeHead != null ? axeHead : transform;
+    }
 
     protected override void Awake()
     {
@@ -27,19 +32,25 @@ public class Axe : Weapon
 
         if (velocityMagnitude > minimumVelocityForDamage)
         {
-            if (((1 << collision.gameObject.layer) & enemyLayer) != 0)
+            EnemyHealth enemy = collision.gameObject.GetComponentInParent<EnemyHealth>();
+            bool isEnemyLayer = ((1 << collision.gameObject.layer) & enemyLayer) != 0;
+
+            if (enemy != null && isEnemyLayer)
             {
                 if (CanHit(collision.collider))
                 {
-                    EnemyHealth enemy = collision.gameObject.GetComponentInParent<EnemyHealth>();
-                    if (enemy != null)
+                    float damage = baseDamage + (velocityMagnitude * damageMultiplier);
+                    Vector3 hitPoint = collision.contactCount > 0
+                        ? collision.GetContact(0).point
+                        : GetVelocityReferenceTransform().position;
+
+                    enemy.TakeDamage(damage, hitPoint);
+
+                    PlayImpactSound(velocityMagnitude / 5f);
+                    TriggerHaptics(0.7f, 0.15f); // Heavier haptics for axe
+
+                    if (collision.collider != null)
                     {
-                        float damage = baseDamage + (velocityMagnitude * damageMultiplier);
-                        enemy.TakeDamage(damage, collision.GetContact(0).point);
-
-                        PlayImpactSound(velocityMagnitude / 5f);
-                        TriggerHaptics(0.7f, 0.15f); // Heavier haptics for axe
-
                         hitCooldowns[collision.collider] = Time.time + swingCooldown;
                     }
                 }
@@ -54,22 +65,10 @@ public class Axe : Weapon
 
     private bool CanHit(Collider col)
     {
-        if (hitCooldowns.TryGetValue(col, out float time))
+        if (col != null && hitCooldowns.TryGetValue(col, out float time))
         {
             return Time.time > time;
         }
         return true;
-    }
-
-    private void TriggerHaptics(float intensity, float duration)
-    {
-        if (interactable != null && interactable.interactorsSelecting.Count > 0)
-        {
-            var interactor = interactable.interactorsSelecting[0];
-            if (interactor is XRBaseControllerInteractor controllerInteractor)
-            {
-                controllerInteractor.xrController.SendHapticImpulse(intensity, duration);
-            }
-        }
     }
 }

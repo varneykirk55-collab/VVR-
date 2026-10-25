@@ -6,12 +6,17 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Sword : Weapon
 {
     public Transform damagePoint;
-    public LayerMask enemyLayer;
+    public LayerMask enemyLayer = ~0;
     public float swingCooldown = 0.5f;
-    private float lastSwingTime;
+    private float lastSwingTime = -999f;
 
-    // To prevent rapid hit exploits
+    // To prevent rapid hit exploits per collider
     private Dictionary<Collider, float> hitCooldowns = new Dictionary<Collider, float>();
+
+    protected override Transform GetVelocityReferenceTransform()
+    {
+        return damagePoint != null ? damagePoint : transform;
+    }
 
     void OnCollisionEnter(Collision collision)
     {
@@ -21,21 +26,25 @@ public class Sword : Weapon
 
         if (velocityMagnitude > minimumVelocityForDamage)
         {
-            if (((1 << collision.gameObject.layer) & enemyLayer) != 0)
+            EnemyHealth enemy = collision.gameObject.GetComponentInParent<EnemyHealth>();
+            bool isEnemyLayer = ((1 << collision.gameObject.layer) & enemyLayer) != 0;
+
+            if (enemy != null && isEnemyLayer)
             {
                 if (CanHit(collision.collider))
                 {
-                    EnemyHealth enemy = collision.gameObject.GetComponentInParent<EnemyHealth>();
-                    if (enemy != null)
-                    {
-                        float damage = baseDamage + (velocityMagnitude * damageMultiplier);
-                        enemy.TakeDamage(damage, collision.GetContact(0).point);
+                    float damage = baseDamage + (velocityMagnitude * damageMultiplier);
+                    Vector3 hitPoint = collision.contactCount > 0
+                        ? collision.GetContact(0).point
+                        : GetVelocityReferenceTransform().position;
 
-                        PlayImpactSound(velocityMagnitude / 5f);
-                        TriggerHaptics(0.5f, 0.1f);
+                    enemy.TakeDamage(damage, hitPoint);
 
-                        hitCooldowns[collision.collider] = Time.time + swingCooldown;
-                    }
+                    PlayImpactSound(velocityMagnitude / 5f);
+                    TriggerHaptics(0.5f, 0.1f);
+
+                    lastSwingTime = Time.time;
+                    hitCooldowns[collision.collider] = Time.time + swingCooldown;
                 }
             }
             else
@@ -49,22 +58,14 @@ public class Sword : Weapon
 
     private bool CanHit(Collider col)
     {
-        if (hitCooldowns.TryGetValue(col, out float time))
+        if (Time.time < lastSwingTime + (swingCooldown * 0.25f))
+        {
+            return false;
+        }
+        if (col != null && hitCooldowns.TryGetValue(col, out float time))
         {
             return Time.time > time;
         }
         return true;
-    }
-
-    private void TriggerHaptics(float intensity, float duration)
-    {
-        if (interactable != null && interactable.interactorsSelecting.Count > 0)
-        {
-            var interactor = interactable.interactorsSelecting[0];
-            if (interactor is XRBaseControllerInteractor controllerInteractor)
-            {
-                controllerInteractor.xrController.SendHapticImpulse(intensity, duration);
-            }
-        }
     }
 }

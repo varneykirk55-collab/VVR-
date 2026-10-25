@@ -18,12 +18,28 @@ public class HandAnimator : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        if (pinchAnimationAction.action != null)
+        {
+            pinchAnimationAction.action.Enable();
+        }
+        if (gripAnimationAction.action != null)
+        {
+            gripAnimationAction.action.Enable();
+        }
+    }
+
     private void Update()
     {
-        if (handAnimator != null)
+        if (handAnimator != null && handAnimator.runtimeAnimatorController != null)
         {
-            float triggerValue = pinchAnimationAction.action.ReadValue<float>();
-            float gripValue = gripAnimationAction.action.ReadValue<float>();
+            float triggerValue = pinchAnimationAction.action != null
+                ? pinchAnimationAction.action.ReadValue<float>()
+                : 0f;
+            float gripValue = gripAnimationAction.action != null
+                ? gripAnimationAction.action.ReadValue<float>()
+                : 0f;
 
             handAnimator.SetFloat("Trigger", triggerValue);
             handAnimator.SetFloat("Grip", gripValue);

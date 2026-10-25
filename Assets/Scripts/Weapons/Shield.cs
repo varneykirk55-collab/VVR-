@@ -5,8 +5,10 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Shield : Weapon
 {
-    public float damageReductionMultiplier = 0.2f; // Takes 20% damage when blocking
-    public float blockAngleTolerance = 90f; // Cone angle for successful block
+    public static readonly List<Shield> ActiveShields = new List<Shield>();
+
+    public float damageReductionMultiplier = 0.2f; // Takes 20% damage when blocking (or 0 when physical intercept)
+    public float blockAngleTolerance = 100f; // Cone angle for successful block
 
     protected override void Awake()
     {
@@ -15,18 +17,52 @@ public class Shield : Weapon
         damageMultiplier = 1f;
     }
 
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        if (!ActiveShields.Contains(this))
+        {
+            ActiveShields.Add(this);
+        }
+    }
+
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+        ActiveShields.Remove(this);
+    }
+
+    /// <summary>
+    /// Finds the currently held shield in the scene (if any).
+    /// </summary>
+    public static Shield GetHeldShield()
+    {
+        for (int i = 0; i < ActiveShields.Count; i++)
+        {
+            Shield shield = ActiveShields[i];
+            if (shield != null && shield.isHeld)
+            {
+                return shield;
+            }
+        }
+        return null;
+    }
+
     // Called by PlayerHealth or EnemyWeapon when taking damage
     public bool TryBlock(Vector3 attackDirection, out float reducedDamage, float incomingDamage)
     {
         reducedDamage = incomingDamage;
 
         if (!isHeld) return false;
+        if (attackDirection.sqrMagnitude < 0.0001f) return false;
 
-        // Check if the shield is facing the attack
-        Vector3 shieldForward = transform.forward; // Assuming Z+ is the front of the shield
-        float angle = Vector3.Angle(shieldForward, -attackDirection.normalized);
+        // Check if the shield is facing the attack (attackDirection points from player/shield toward the attacker, or from attacker to player)
+        Vector3 shieldForward = transform.forward;
+        float angleAgainstIncoming = Vector3.Angle(shieldForward, -attackDirection.normalized);
+        float angleTowardAttacker = Vector3.Angle(shieldForward, attackDirection.normalized);
+        float effectiveAngle = Mathf.Min(angleAgainstIncoming, angleTowardAttacker);
 
-        if (angle <= blockAngleTolerance / 2f)
+        if (effectiveAngle <= blockAngleTolerance / 2f)
         {
             // Successful block
             reducedDamage = incomingDamage * damageReductionMultiplier;
@@ -51,22 +87,13 @@ public class Shield : Weapon
             if (enemy != null)
             {
                 float damage = baseDamage + (velocityMagnitude * damageMultiplier);
-                enemy.TakeDamage(damage, collision.GetContact(0).point);
+                Vector3 hitPoint = collision.contactCount > 0
+                    ? collision.GetContact(0).point
+                    : transform.position;
+                enemy.TakeDamage(damage, hitPoint);
 
                 PlayImpactSound(velocityMagnitude / 5f);
                 TriggerHaptics(0.4f, 0.1f);
-            }
-        }
-    }
-
-    private void TriggerHaptics(float intensity, float duration)
-    {
-        if (interactable != null && interactable.interactorsSelecting.Count > 0)
-        {
-            var interactor = interactable.interactorsSelecting[0];
-            if (interactor is XRBaseControllerInteractor controllerInteractor)
-            {
-                controllerInteractor.xrController.SendHapticImpulse(intensity, duration);
             }
         }
     }

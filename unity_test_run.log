@@ -1,0 +1,458 @@
+VBCSCompilerPreWarmer: watching VBCSCompiler (PID 19588)
+VBCSCompilerPreWarmer: pre-warm launched (dotnet PID 9708)
+VBCSCompiler prewarm took 48.73 ms
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.6/staging' branch; Version is '6000.6.6f1 (d20c9ac777da) revision 13765786'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-aresg" at "2026-10-25T19:30:38.9040728Z"
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'en' Physical Memory: 15260 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-10-25T19:30:38Z
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 3504, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              cbd9afd5a2e248fcbe2c5bddabfdfb15
+  Correlation Id:          d55341c18cef510aff8e4f530a9f70c9
+  External correlation Id: 5928588202573703427
+  Machine Id:              PB5tqFovrKKcVs56eU1+i2663cw=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-aresg" (connect: 0.00s, validation: 0.00s, handshake: 0.09s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-aresg-notifications" at "2026-10-25T19:30:38.9920548Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 2476068098135-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Module] Licensing Background thread has ended after 0.09s
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.6.6f1\Editor\Unity.exe
+-batchmode
+-nographics
+-projectPath
+C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena
+-runTests
+-testPlatform
+EditMode
+-testResults
+C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\TestResults.xml
+-logFile
+C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\unity_test_run.log
+Successfully changed project path to: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena
+C:/Users/aresg/.gemini/antigravity/scratch/VVR-Arena
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-remapper-allocator-initial-capacity=32768"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-main-allocator-mimalloc-enabled=1"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+Logging is directed to a specific file, skipping project log.
+Player connection [9124]  Target information:
+
+Player connection [9124]  * "[IP] 10.0.0.162 [Port] 55505 [Flags] 2 [Guid] 1979751308 [EditorId] 1979751308 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-KEGHEQSN) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [9124] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [9124] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-6388" after 0.6 seconds.
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+Launching Unity Data Store - C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/Tools/Unity.DataStore.exe 
+Unity Data Store artifact dir = Library/DataStore, working dir = C:/Users/aresg/.gemini/antigravity/scratch/VVR-ArenaUnity Data Store running and initialised
+[Physics::Module] Selected backend (deferred post-plugins).
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Initialize engine version: 6000.6.6f1 (d20c9ac777da)
+[EntityIdStore] init: VM path (explicit commit), pageSize=4096, blockCount=1048576, entitiesPerBlock=256, slots reserved=4294967296 bytes
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/aresg/.gemini/antigravity/scratch/VVR-Arena/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/BCLExtensions/runtime/netstandard2.1'
+Mono path[2] = 'C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56388
+CodeReloadManager initialized
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.005447 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:False
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  1.752 seconds
+Domain Reload Profiling: 3207ms
+	BeginReloadAssembly (332ms)
+		CreateAndSetChildDomain (8ms)
+	RebuildCommonClasses (11ms)
+	RebuildNativeTypeToScriptingClass (46ms)
+	initialDomainReloadingComplete (185ms)
+	LoadAllAssembliesAndSetupDomain (877ms)
+		LoadAssemblies (315ms)
+		TypeCache.Refresh (588ms)
+			TypeCache.ScanAssembly (557ms)
+		AnalyzeDomain (1ms)
+	FinalizeReload (1756ms)
+		SetupLoadedEditorAssemblies (0ms)
+			LogAssemblyErrors (3ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			BeforeProcessingInitializeOnLoad (327ms)
+			ProcessInitializeOnLoadAttributes (300ms)
+			ProcessInitializeOnLoadMethodAttributes (590ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 52 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.ai.navigation@2.0.15 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.ai.navigation@a9c5744fc1de)
+    com.unity.ide.rider@3.0.38 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.ide.rider@1f60b3138684)
+    com.unity.ide.visualstudio@2.0.26 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.ide.visualstudio@a99d56dec63f)
+    com.unity.inputsystem@1.20.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.inputsystem@7a4e1a2a8194)
+    com.unity.xr.core-utils@2.6.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.xr.core-utils@a8b900321199)
+    com.unity.xr.interaction.toolkit@3.6.1 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.xr.interaction.toolkit@530ce2e6c59e)
+    com.unity.xr.legacyinputhelpers@3.0.1 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.xr.legacyinputhelpers@3f62d634f63b)
+    com.unity.xr.management@4.7.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.xr.management@2ad85c7dd480)
+    com.unity.xr.openxr@1.18.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.xr.openxr@b5b77b4027be)
+  Built-in packages:
+    com.unity.test-framework@1.8.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.test-framework@80f691d4262b)
+    com.unity.timeline@6.6.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.timeline@4891807c6bd8)
+    com.unity.ugui@2.6.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.ugui@0b1771797efc)
+    com.unity.modules.accessibility@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.physicscore2d@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.physicscore2d)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tetgen@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.tetgen)
+    com.unity.modules.tilemap@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.timelinefoundation@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.timelinefoundation)
+    com.unity.modules.ui@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.wind@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.mathematics@1.4.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.mathematics@8306a64d0cd6)
+    com.unity.ext.nunit@2.1.0 (location: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.ext.nunit@0198eae3b53e)
+[Subsystems] Looking for new subsystems at path C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.xr.openxr@b5b77b4027be
+[Subsystems] Novel subsystem found at Library/PackageCache/com.unity.xr.openxr@b5b77b4027be/Runtime/UnitySubsystemsManifest.json
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.6.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/aresg/.gemini/antigravity/scratch/VVR-Arena/Assets
+[Subsystems] Discovering subsystems at path C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\Library\PackageCache\com.unity.xr.openxr@b5b77b4027be
+[Subsystems] No descriptors matched for  examples in Library/PackageCache/com.unity.xr.openxr@b5b77b4027be/Runtime/UnitySubsystemsManifest.json.
+[Subsystems] 1 'inputs' descriptors matched in Library/PackageCache/com.unity.xr.openxr@b5b77b4027be/Runtime/UnitySubsystemsManifest.json
+[Subsystems] 1 'displays' descriptors matched in Library/PackageCache/com.unity.xr.openxr@b5b77b4027be/Runtime/UnitySubsystemsManifest.json
+[Subsystems] No descriptors matched for  meshings in Library/PackageCache/com.unity.xr.openxr@b5b77b4027be/Runtime/UnitySubsystemsManifest.json.
+[Package Manager] Done registering packages in 0.06 seconds
+AcceleratorClientConnectionCallback - disconnected - :0
+Starting: C:\Program Files\Unity\Hub\Editor\6000.6.6f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/aresg/.gemini/antigravity/scratch/VVR-Arena
+DisplayProgressbar: Compiling Scripts
+ExitCode: 0 Duration: 0s510ms
+[549/697    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+*** Tundra build success (0.41 seconds), 1 items updated, 697 evaluated
+AssetDatabase: script compilation time: 1.672150s
+Begin MonoManager ReloadAssembly
+Total cache size 89031556
+Total cache size after purge 89031556, took 00:00:00.3436484
+Importing 'GUID: 00000000000000004000000000000000 - Path: ProjectSettings/ProjectSettings.asset' with importer (LibraryAssetImporter)
+Imported 'GUID: 00000000000000004000000000000000' -> (Import Result ID: '8077607c817312d48fa5afba29095056') in 0.038 seconds [static dependencies only]. Details - ImportResultOutputID=054c890a8f4b6dddbea933bc5e4b7df4 DependenciesID=4d8363d37b5e2da288b131169ffc1508 StaticDependenciesID=5d8a65af6674e775a1422ed13914a708 
+Refreshing native plugins compatible for Editor in 16.36 ms, found 6 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:False
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  1.748 seconds
+Domain Reload Profiling: 3721ms
+	BeginReloadAssembly (735ms)
+		DisableScriptedObjects (113ms)
+		CreateAndSetChildDomain (129ms)
+	RebuildCommonClasses (30ms)
+	RebuildNativeTypeToScriptingClass (47ms)
+	initialDomainReloadingComplete (143ms)
+	LoadAllAssembliesAndSetupDomain (1015ms)
+		LoadAssemblies (767ms)
+		TypeCache.Refresh (129ms)
+			TypeCache.ScanAssembly (112ms)
+		AnalyzeDomain (79ms)
+			BuildScriptInfoCaches (70ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (1751ms)
+		SetupLoadedEditorAssemblies (0ms)
+			LogAssemblyErrors (5ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			BeforeProcessingInitializeOnLoad (287ms)
+			ProcessInitializeOnLoadAttributes (416ms)
+			ProcessInitializeOnLoadMethodAttributes (326ms)
+			AfterProcessingInitializeOnLoad (26ms)
+			EditorAssembliesLoaded (3ms)
+		AwakeInstancesAfterBackupRestoration (82ms)
+Starting new worker id: 0 with log in C:/Users/aresg/.gemini/antigravity/scratch/VVR-Arena/Logs/AssetImportWorkerHW0.log
+Refreshing native plugins compatible for Editor in 14.50 ms, found 6 plugins.
+
+Asset Pipeline Refresh (id=5184c63b8be08174c8540a910b8d520d): Total: 7.075 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	(Values over 0.05ms)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=10 ms, native=2657 ms
+		Asset DB Callback time: managed=384 ms, native=108 ms
+		Scripting: domain reloads=1, domain reload time=2114 ms, compile time=1679 ms, other=121 ms
+		Project Asset Count: scripts=763, non-scripts=538
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokePackagesCallback: 67.981ms
+	ApplyChangesToAssetFolders: 1.538ms
+	Scan: 184.956ms
+	Collect global state as custom dependencies: 24.720ms
+	OnSourceAssetsModified: 1.101ms
+	CategorizeScriptCompilationAssets: 43.464ms
+	ProcessAssetsWithTransientArtifactChanges: 121.868ms
+	CategorizeAssets: 38.102ms
+	CompileScripts: 1678.692ms
+	ImportOutOfDateAssets: 1875.175ms (1793.454ms without children)
+		ImportManagerImport: 48.670ms (9.725ms without children)
+			UpdateCategorizedAssets: 0.061ms
+		UnloadImportedAssets: 4.210ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.932ms
+		ImportSchedulerStart: 27.865ms
+	PostProcessAllAssets: 439.616ms
+		XRBuildSystem.XRAssetImported 4.191ms
+		VCAutoAddAssetPostprocess 1.948ms
+		MonoPostProcessAllAssets: 383.710ms
+			AssetPostprocessor.OnPostprocessAllAssets 182.717ms
+			StyleCatalogPostProcessor.OnPostprocessAllAssets 38.919ms
+			WindowAssetPostprocessingWatcher.OnPostprocessAllAssets 30.533ms
+			BuilderAssetPostprocessor.OnPostprocessAllAssets 28.264ms
+			AssetCallbacks.OnPostprocessAllAssets 17.124ms
+			SyncVS.PostprocessSyncProject 10.563ms
+			EditModeScopePostprocessor.OnPostprocessAllAssets 4.239ms
+			AssetChangedListener.OnPostprocessAllAssets 4.202ms
+			RetainedModeAssetPostprocessor.OnPostprocessAllAssets 3.487ms
+			InputActionAssetPostprocessor.OnPostprocessAllAssets 2.631ms
+			SpeedTree9Postprocessor.OnPostprocessAllAssets 1.859ms
+			InputActionJsonNameModifierAssetProcessor.OnPostprocessAllAssets 1.703ms
+			ArtifactBrowserPostProcessor.OnPostprocessAllAssets 1.676ms
+			AudioMixerPostprocessor.OnPostprocessAllAssets 1.317ms
+			TextAssetPostProcessor.OnPostprocessAllAssets 1.213ms
+			ReferencedClipsPostProcessor.OnPostprocessAllAssets 0.956ms
+			AssetEvents.OnPostprocessAllAssets 0.886ms
+			TMPro_TexturePostProcessor.OnPostprocessAllAssets 0.822ms
+			ProjectSettingsPostprocessor.OnPostprocessAllAssets 0.692ms
+			AssetDatabaseCallbacks.OnPostprocessAllAssets 0.664ms
+			ConfigAssetsTracker.OnPostprocessAllAssets 0.588ms
+			TerrainToolbarOverlayPostProcessor.OnPostprocessAllAssets 0.522ms
+			SpeedTreePostProcessor.OnPostprocessAllAssets 0.470ms
+			ScenarioDriftAssetsTracker.OnPostprocessAllAssets 0.466ms
+			SamplePostprocessor.OnPostprocessAllAssets 0.375ms
+			AudioContainerPostProcessor.OnPostprocessAllAssets 0.369ms
+			ThemePostprocessor.OnPostprocessAllAssets 0.289ms
+			RenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 0.269ms
+	PostAssetChangesProfiler: 16.642ms
+	GatherAllCurrentPrimaryImportResultRevisions: 0.090ms
+	UnloadStreamsBegin: 4.506ms
+	PersistCurrentRevisions: 0.340ms
+	GenerateScriptTypeHashes: 3.273ms
+	GenerateScriptTypeSerializationHashes: 6.548ms
+	Untracked: 2523.551ms
+
+Application.AssetDatabase Initial Refresh End
+Scanning for USB devices : 7.386ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-VVR-Arena
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 2868 unused Assets / (1.7 MB). Loaded Objects now: 3614.
+Memory consumption went from 261.9 MB to 260.3 MB.
+Total: 17.550100 ms (FindLiveObjects: 0.606400 ms CreateObjectMapping: 0.723700 ms MarkObjects: 13.200600 ms  DeleteObjects: 2.632200 ms)
+
+Microsoft Media Foundation video decoding to texture disabled: graphics device is Null, only Direct3D 11 and Direct3D 12 (only on desktop) are supported for hardware-accelerated video decoding.
+[Project] Loading completed in 13.826 seconds
+	Project init time: 				12.425 seconds
+		Template init time: 		0.000 seconds
+		Package Manager init time: 		0.616 seconds
+		Asset Database init time: 		0.392 seconds
+		Global illumination init time: 	0.005 seconds
+		Assemblies load time: 			3.344 seconds
+		Unity extensions init time: 	0.021 seconds
+		Asset Database refresh time: 	7.076 seconds
+	Scene opening time: 			1.160 seconds
+##utp:{"type":"ProjectInfo","version":2,"phase":"Immediate","time":1792956652666,"processId":6388,"projectLoad":13.8263402,"projectInit":12.424697,"templateInit":0.0,"packageManagerInit":0.616434,"assetDatabaseInit":0.391954,"globalIlluminationInit":0.0051741,"assembliesLoad":3.3435996,"unityExtensionsInit":0.0205289,"assetDatabaseRefresh":7.076251,"sceneOpening":1.160141}
+##utp:{"type":"EditorInfo","version":2,"phase":"Immediate","time":1792956652666,"processId":6388,"editorVersion":"6000.6.6f1 (d20c9ac777da)","branch":"6000.6/staging","buildType":"Release","platform":"Windows"}
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+Running tests for ExecutionSettings with details:
+targetPlatform = 
+playerHeartbeatTimeout = 600
+filters[0] = 
+   Filter with settings:
+   testMode = EditMode
+   targetPlatform = 
+   testNames = null
+   groupNames = null
+   categoryNames = null
+   assemblyNames = null
+ignoreTests = {}
+featureFlags = null
+
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEditor.TestTools.TestRunner.CommandLineTest.Executer:InitializeAndExecuteRun (string[]) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEditor.TestRunner/CommandLineTest/Executer.cs:53)
+UnityEditor.TestTools.TestRunner.CommandLineTest.TestStarter:InitializeAndExecuteRun () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEditor.TestRunner/CommandLineTest/TestStarter.cs:64)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEditor.TestRunner/CommandLineTest/Executer.cs Line: 53)
+
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+Worker ready: AssetImportWorkerHW0 0
+[UnityConnectServicesConfig] config is NOT valid, switching to default
+Created GICache directory at C:/Users/aresg/AppData/LocalLow/Unity/Caches/GiCache. Took: 0.032s, timestamps: [13.834 - 13.866]
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (8.3 KB). Loaded Objects now: 3779.
+Memory consumption went from 299.9 MB to 299.9 MB.
+Total: 17.333700 ms (FindLiveObjects: 0.415300 ms CreateObjectMapping: 0.167700 ms MarkObjects: 16.365300 ms  DeleteObjects: 0.084400 ms)
+
+Opening scene 'Assets/Scenes/VikingArena.unity'
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/VikingArena.unity'
+	Deserialize:            90.123 ms
+	Integration:            98.399 ms
+	Integration of assets:  2.233 ms
+	Thread Wait Time:       0.017 ms
+	Total Operation Time:   190.772 ms
+Unloading 4 unused Assets / (8.6 KB). Loaded Objects now: 4203.
+Memory consumption went from 307.5 MB to 307.5 MB.
+Total: 16.395600 ms (FindLiveObjects: 0.387300 ms CreateObjectMapping: 0.088100 ms MarkObjects: 15.550900 ms  DeleteObjects: 0.071700 ms)
+
+Opening scene 'Assets/Scenes/VikingArena.unity'
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/VikingArena.unity'
+	Deserialize:            5.314 ms
+	Integration:            30.736 ms
+	Integration of assets:  0.004 ms
+	Thread Wait Time:       0.025 ms
+	Total Operation Time:   36.079 ms
+Unloading 4 unused Assets / (8.6 KB). Loaded Objects now: 4205.
+Memory consumption went from 307.7 MB to 307.7 MB.
+Total: 22.963000 ms (FindLiveObjects: 0.813100 ms CreateObjectMapping: 0.532500 ms MarkObjects: 21.227700 ms  DeleteObjects: 0.068700 ms)
+
+Saving results to: C:\Users\aresg\.gemini\antigravity\scratch\VVR-Arena\TestResults.xml
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 127 unused Assets / (89.8 KB). Loaded Objects now: 3788.
+Memory consumption went from 308.7 MB to 308.7 MB.
+Total: 16.315300 ms (FindLiveObjects: 0.954900 ms CreateObjectMapping: 0.441400 ms MarkObjects: 14.339300 ms  DeleteObjects: 0.250600 ms)
+
+DisplayProgressbar: Undo
+Test run completed. Exiting with code 0 (Ok). Run completed.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEditor.TestTools.TestRunner.CommandLineTest.Executer:ExitApplication (UnityEditor.TestTools.TestRunner.CommandLineTest.Executer/ReturnCodes,string) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEditor.TestRunner/CommandLineTest/Executer.cs:81)
+UnityEditor.TestTools.TestRunner.CommandLineTest.Executer:ExitIfRunIsCompleted () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEditor.TestRunner/CommandLineTest/Executer.cs:74)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEditor.TestRunner/CommandLineTest/Executer.cs Line: 81)
+
+MonoPathRemapper: Attempts to remap: 6986; Successful remaps: 24
+Serialized file version minimum: 23, current 23
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input Polling Thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-aresg-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-aresg channel disconnected successfully.
+Lingering sessions upon destruction of worker manager
+Unity Data Store service was successfully shut down
+UDS shutting down local client system
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+CodeReloadManager destroyed
+VBCSCompilerPreWarmer: requested VBCSCompiler shutdown
+Checking for leaked weakptr:
+  Found no leaked weakptrs.
+[Package Manager] Server process was shutdown
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1792956660228,"processId":6388,"allocatedMemory":12092448,"memoryLabels":[{"Default":177152},{"Permanent":15516},{"NewDelete":69007},{"Thread":4197944},{"Manager":31069},{"VertexData":8},{"Geometry":816},{"Texture":24},{"Shader":848950},{"Material":132},{"GfxDevice":55968},{"Animation":1944},{"FreeType":8},{"FontEngine":736},{"Physics":1970},{"Physics2D":16},{"Serialization":38592},{"Input":42840},{"JobScheduler":256},{"TextLib":280},{"Mono":48},{"ScriptingNativeRuntime":1417248},{"BaseObject":56656},{"Resource":1444},{"Renderer":2504},{"Transform":4685},{"File":7389},{"WebCam":616},{"Culling":32},{"Terrain":11442},{"Wind":24},{"STL":40},{"String":448324},{"StaticString":3808},{"Utility":2673718},{"Curl":2559},{"PoolAlloc":2168},{"AI":80},{"TypeTree":17165},{"ScriptManager":12656},{"CodeReload":448},{"RuntimeInitializeOnLoadManager":64},{"Sprites":102},{"SpriteAtlas":120},{"GI":7816},{"Director":7304},{"CloudService":576},{"WebRequest":552},{"VR":49794},{"SceneManager":608},{"Video":64},{"LazyScriptCache":32},{"Camera":729},{"Secure":2377},{"SerializationCache":9256},{"APIUpdating":10320},{"Subsystems":192},{"VirtualTexturing":57888},{"StaticSafetyDebugInfo":278528},{"Analytics":464},{"Hierarchy":1188},{"UIElements":40},{"CoreStats":14456},{"Identifiers":7152},{"Gui":128},{"EditorUtility":120205},{"VersionControl":8},{"Undo":931},{"AssetDatabase":1318067},{"AssetImporter":40},{"EditorGi":328},{"UnityConnect":40465},{"Upm":1912},{"UpmDiagnostics":8},{"AssetCompliance":96},{"DrivenProperties":72},{"LocalIPC":260},{"ProfilerEditor":9746},{"CoreBusinessMetrics":3226},{"Windowing":456},{"Licensing":12572},{"AssetReference":32},{"IPCStream":32}]}

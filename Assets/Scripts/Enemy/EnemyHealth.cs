@@ -8,8 +8,8 @@ public class EnemyHealth : MonoBehaviour
     public float maxHealth = 100f;
     public float currentHealth;
 
-    public UnityEvent OnDeath;
-    public UnityEvent OnTakeDamage;
+    public UnityEvent OnDeath = new UnityEvent();
+    public UnityEvent OnTakeDamage = new UnityEvent();
 
     public ParticleSystem bloodEffect;
     public AudioSource audioSource;
@@ -17,19 +17,26 @@ public class EnemyHealth : MonoBehaviour
     public AudioClip deathSound;
 
     private Animator animator;
+    private bool isDead = false;
 
-    void Start()
+    void Awake()
     {
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
         if (audioSource == null) audioSource = GetComponent<AudioSource>();
     }
 
+    void Start()
+    {
+        if (currentHealth <= 0f) currentHealth = maxHealth;
+    }
+
     public void TakeDamage(float amount, Vector3 hitPoint)
     {
-        if (currentHealth <= 0) return;
+        if (isDead || currentHealth <= 0f) return;
 
         currentHealth -= amount;
+        currentHealth = Mathf.Max(0f, currentHealth);
 
         OnTakeDamage?.Invoke();
 
@@ -44,9 +51,12 @@ public class EnemyHealth : MonoBehaviour
             audioSource.PlayOneShot(hitSound);
         }
 
-        if (currentHealth > 0)
+        if (currentHealth > 0f)
         {
-            if (animator != null) animator.SetTrigger("Hit");
+            if (animator != null && animator.runtimeAnimatorController != null)
+            {
+                animator.SetTrigger("Hit");
+            }
         }
         else
         {
@@ -56,6 +66,9 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
+        if (isDead) return;
+        isDead = true;
+
         if (audioSource != null && deathSound != null)
         {
             audioSource.PlayOneShot(deathSound);
