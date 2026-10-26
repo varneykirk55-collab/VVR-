@@ -93,11 +93,13 @@ public class Weapon : MonoBehaviour
         Transform refTransform = GetVelocityReferenceTransform();
         previousPosition = refTransform != null ? refTransform.position : transform.position;
         currentVelocity = Vector3.zero;
+        VVRDiag.Log($"grab weapon={name} by={(args != null && args.interactorObject != null ? args.interactorObject.transform.name : "?")}");
     }
 
     protected virtual void OnReleased(SelectExitEventArgs args)
     {
         isHeld = false;
+        VVRDiag.Log($"release weapon={name}");
     }
 
     /// <summary>

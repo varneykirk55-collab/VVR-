@@ -626,11 +626,17 @@ public static class VVRProjectSetup
         capsule.height = 2.0f;
         capsule.radius = 0.38f;
 
+        // Kinematic body so the NavMeshAgent moves a kinematic Rigidbody instead of re-positioning a static collider every frame.
+        Rigidbody rootRb = root.AddComponent<Rigidbody>();
+        rootRb.isKinematic = true;
+        rootRb.useGravity = false;
+        rootRb.mass = 80f;
+
         NavMeshAgent agent = root.AddComponent<NavMeshAgent>();
         agent.speed = 3.2f;
         agent.angularSpeed = 240f;
         agent.acceleration = 12f;
-        agent.stoppingDistance = 1.7f;
+        agent.stoppingDistance = 0.9f;
         agent.height = 2.0f;
         agent.radius = 0.4f;
 
@@ -641,13 +647,14 @@ public static class VVRProjectSetup
         audio.playOnAwake = false;
         audio.spatialBlend = 1.0f;
 
-        // Visual body parts
+        // Visual body parts. Torso and Head are visual only: the root CapsuleCollider fully encloses both and is the
+        // single hit volume for player weapons.
         GameObject torso = CreatePrimitiveChild(PrimitiveType.Capsule, "Torso", root.transform,
-            new Vector3(0f, 1.05f, 0f), Quaternion.identity, new Vector3(0.55f, 0.58f, 0.38f), mats["EnemyTunic"], false);
+            new Vector3(0f, 1.05f, 0f), Quaternion.identity, new Vector3(0.55f, 0.58f, 0.38f), mats["EnemyTunic"]);
         torso.layer = enemyLayerIndex;
 
         GameObject head = CreatePrimitiveChild(PrimitiveType.Sphere, "Head", root.transform,
-            new Vector3(0f, 1.78f, 0f), Quaternion.identity, new Vector3(0.32f, 0.34f, 0.32f), mats["EnemySkin"], false);
+            new Vector3(0f, 1.78f, 0f), Quaternion.identity, new Vector3(0.32f, 0.34f, 0.32f), mats["EnemySkin"]);
         head.layer = enemyLayerIndex;
 
         CreatePrimitiveChild(PrimitiveType.Cylinder, "Helmet", head.transform,
@@ -669,7 +676,7 @@ public static class VVRProjectSetup
         BoxCollider weaponTrigger = enemyWeaponObj.AddComponent<BoxCollider>();
         weaponTrigger.isTrigger = true;
         weaponTrigger.center = new Vector3(0f, 0.25f, 0f);
-        weaponTrigger.size = new Vector3(0.25f, 0.65f, 0.25f);
+        weaponTrigger.size = new Vector3(0.45f, 0.65f, 0.25f);
 
         Rigidbody weaponRb = enemyWeaponObj.AddComponent<Rigidbody>();
         weaponRb.isKinematic = true;
@@ -696,6 +703,7 @@ public static class VVRProjectSetup
         main.startSpeed = 3.0f;
         main.startSize = 0.08f;
         main.startColor = new Color(0.8f, 0.05f, 0.05f, 1f);
+        main.maxParticles = 64;
         ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
 
         ParticleSystemRenderer psRenderer = hitFxObj.GetComponent<ParticleSystemRenderer>();
@@ -707,7 +715,7 @@ public static class VVRProjectSetup
         enemyHealth.audioSource = audio;
 
         EnemyAI enemyAI = root.AddComponent<EnemyAI>();
-        enemyAI.attackRange = 2.0f;
+        enemyAI.attackRange = 1.2f;
         enemyAI.attackCooldown = 2.0f;
         enemyAI.moveSpeed = 3.2f;
         enemyAI.enemyWeapon = enemyWeapon;

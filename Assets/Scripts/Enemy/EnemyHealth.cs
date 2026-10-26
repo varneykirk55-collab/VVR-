@@ -31,12 +31,28 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0f) currentHealth = maxHealth;
     }
 
+    /// <summary>
+    /// Restores a pooled enemy to full health before it is spawned again.
+    /// </summary>
+    public void ResetHealth()
+    {
+        isDead = false;
+        currentHealth = maxHealth;
+        if (bloodEffect != null)
+        {
+            bloodEffect.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        }
+    }
+
+    public bool IsDead => isDead;
+
     public void TakeDamage(float amount, Vector3 hitPoint)
     {
         if (isDead || currentHealth <= 0f) return;
 
         currentHealth -= amount;
         currentHealth = Mathf.Max(0f, currentHealth);
+        VVRDiag.Log($"enemy hit name={name} damage={amount:F1} hp={currentHealth:F0}");
 
         OnTakeDamage?.Invoke();
 

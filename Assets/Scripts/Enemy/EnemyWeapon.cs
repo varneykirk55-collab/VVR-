@@ -35,7 +35,20 @@ public class EnemyWeapon : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        TryHit(other);
+    }
+
+    // The swing can start while the axe already overlaps the player (no new Enter event), so also check
+    // overlaps that persist into the damage window. canDealDamage still limits it to one hit per swing.
+    void OnTriggerStay(Collider other)
+    {
+        TryHit(other);
+    }
+
+    private void TryHit(Collider other)
+    {
         if (!canDealDamage || other == null) return;
+        if (other.transform.root == transform.root) return; // own body
 
         // 1. Check if the enemy weapon physically struck a held Shield first
         Shield hitShield = other.GetComponentInParent<Shield>();

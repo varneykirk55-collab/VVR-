@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverCanvas;
     public GameObject victoryCanvas;
     public WaveManager waveManager;
+    [Tooltip("Seconds after Game Over before the arena reloads automatically (there is no in-VR restart button). 0 = never.")]
+    public float autoRestartDelay = 8f;
 
     private bool isGameOver = false;
     public bool IsGameOver => isGameOver;
@@ -67,6 +69,12 @@ public class GameManager : MonoBehaviour
         {
             gameOverCanvas.SetActive(true);
         }
+
+        VVRDiag.Log($"game over wave={(waveManager != null ? waveManager.CurrentWave : -1)} kills={(waveManager != null ? waveManager.TotalKills : -1)}");
+        if (autoRestartDelay > 0f && Application.isPlaying)
+        {
+            Invoke(nameof(RestartGame), autoRestartDelay);
+        }
     }
 
     public void Victory()
@@ -83,11 +91,14 @@ public class GameManager : MonoBehaviour
         {
             victoryCanvas.SetActive(true);
         }
+
+        VVRDiag.Log("victory");
     }
 
     public void RestartGame()
     {
         isGameOver = false;
+        VVRDiag.Log("restart scene");
         Scene activeScene = SceneManager.GetActiveScene();
         if (activeScene.buildIndex >= 0)
         {

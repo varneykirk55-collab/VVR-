@@ -100,7 +100,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4419077657119811371}
   - component: {fileID: 7589841048883245887}
-  - component: {fileID: 293796158386158874}
   - component: {fileID: 7323826567227532853}
   m_Layer: 8
   m_Name: Head
@@ -134,27 +133,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416140846735203023}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!135 &293796158386158874
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416140846735203023}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &7323826567227532853
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -259,7 +237,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.25, y: 0.65, z: 0.25}
+  m_Size: {x: 0.45, y: 0.65, z: 0.25}
   m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!54 &1196203673127202467
 Rigidbody:
@@ -311,7 +289,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8358978293899160498}
   - component: {fileID: 2480925365589137822}
-  - component: {fileID: 5097215433759544304}
   - component: {fileID: 1945514740187500337}
   m_Layer: 8
   m_Name: Torso
@@ -343,29 +320,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3084894542544839991}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!136 &5097215433759544304
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3084894542544839991}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1945514740187500337
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -790,6 +744,7 @@ GameObject:
   - component: {fileID: 1818496174400643890}
   - component: {fileID: 7503691362089881141}
   - component: {fileID: 6957125391222441150}
+  - component: {fileID: 6018837403951628341}
   m_Layer: 8
   m_Name: VikingEnemy
   m_TagString: Untagged
@@ -797,6 +752,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!54 &6018837403951628341
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5720505391988864144}
+  serializedVersion: 5
+  m_Mass: 80
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &5327222602878135089
 Transform:
   m_ObjectHideFlags: 0
@@ -855,7 +837,7 @@ NavMeshAgent:
   m_Acceleration: 12
   avoidancePriority: 50
   m_AngularSpeed: 240
-  m_StoppingDistance: 1.7
+  m_StoppingDistance: 0.9
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1019,7 +1001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: VVR::EnemyAI
   target: {fileID: 0}
-  attackRange: 2
+  attackRange: 1.2
   attackCooldown: 2
   moveSpeed: 3.2
   enemyWeapon: {fileID: 9126294256456072992}
@@ -1393,7 +1375,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 0
-    maxNumParticles: 1000
+    maxNumParticles: 64
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0

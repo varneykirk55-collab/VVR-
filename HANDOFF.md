@@ -1,3 +1,23 @@
+# UPDATE: Claude Code repair pass (branch `claude/quest2-freeze-repair`, based on `363268a`)
+
+**Status:** code repairs done and type-checked; **not compiled in Unity, no APK built, not tested on a Quest 2.** The environment had no Unity Editor or Android SDK, and its network policy blocked the Unity and Android download hosts. Build and test steps are in [`QUEST2_TESTING.md`](QUEST2_TESTING.md).
+
+### Corrections to the earlier analysis below
+- **The 836 ms "spawn spike" is not specific to spawning.** `VVRPlayModeSpawnTests` takes the max frame time over 12 s starting on the first frame after `LoadSceneAsync`, so scene-load and init frames are included. The new `VVRPlayModeEnemyLifecycleTests` measures only the frames on which enemies spawn.
+- **No deterministic hang exists in the code.** There are no loops or recursion on the spawn path, no `timeScale` changes, and no blocking calls. All 11 materials share one Standard-shader variant (no keywords) that the arena already renders before the first spawn. The physics settings are Unity defaults. The root cause of the Quest freeze therefore remains **unconfirmed** until a device log is captured. The new watchdog logs `VVR_DIAG HANG ... lastMarker=...` from a background thread, so one logcat capture will show where the main thread stopped.
+- **The scene has no locomotion components** (no move/turn provider, no CharacterController). The only movement is room-scale head and controller tracking. Locomotion was not added in this pass.
+
+### Repairs in this pass
+- **Spawn path:** enemies are pre-warmed into a pool during the 3 s countdown, behind the player's view. Dead enemies return to the pool and are reused instead of Destroy/Instantiate. At most 6 enemies are alive at once (`maxConcurrentEnemies`); wave sizes are unchanged.
+- **Enemy physics:** the root has a kinematic Rigidbody, so the NavMeshAgent no longer moves static colliders every frame. The redundant Torso/Head colliders were removed (the root capsule fully encloses them). The blood particle buffer is 64 instead of 1000.
+- **Navigation:** `SetDestination` runs at 5 Hz, and only when the player moved more than 0.25 m. The target is the headset position, snapped onto the NavMesh; the player's start position is inside the hole the weapon rack cuts. Agents are warped onto the NavMesh at spawn if needed.
+- **Player damage now works:** before, enemies stopped at 1.7 m with an axe reaching about 1.15 m, the axe never moved, and only `OnTriggerEnter` was used. Now: a stopping distance of 0.9 m and attack range of 1.2 m, a procedural wind-up and strike swing, `OnTriggerStay`, a wider axe trigger, and a player body collider that follows the headset.
+- **Game over** reloads the arena after 8 s, since there is no in-VR restart button.
+- **Diagnostics:** `VVRDiag` logs without stack traces, plus a main-thread hang watchdog. Breadcrumbs cover XR loader and refresh rate, controller connect, spawn, AI init, grab/release, hits, deaths and errors.
+- **Build hygiene:** removed the editor-only `UnityEditor.TestRunner` reference from the PlayMode test asmdef, and added the missing `.meta` files. `VVRProjectSetup.cs` was updated so regenerating the prefab keeps these fixes.
+
+---
+
 # HANDOFF: Enemy Spawn Freeze Investigation & Partial Fix (Claude Sonnet -> Next Agent)
 
 **Project:** `VVR-Arena` (Unity `6000.6.6f1`, OpenXR + XR Interaction Toolkit `3.6.1`)  
