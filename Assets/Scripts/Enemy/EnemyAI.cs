@@ -32,8 +32,11 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    private bool loggedFirstUpdate = false;
+
     void Start()
     {
+        Debug.Log($"VVR_DIAG enemy Start onNavMesh={(agent != null && agent.isOnNavMesh)} t={Time.realtimeSinceStartup:F2}");
         if (target == null)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -56,6 +59,12 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         if (isDead || target == null) return;
+
+        if (!loggedFirstUpdate)
+        {
+            loggedFirstUpdate = true;
+            Debug.Log($"VVR_DIAG enemy first Update target={target.name} t={Time.realtimeSinceStartup:F2}");
+        }
 
         // Calculate horizontal (XZ plane) distance so VR headset height offset doesn't skew melee range
         Vector3 flatSelf = new Vector3(transform.position.x, 0f, transform.position.z);

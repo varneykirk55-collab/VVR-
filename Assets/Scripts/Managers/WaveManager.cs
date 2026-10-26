@@ -115,7 +115,9 @@ public class WaveManager : MonoBehaviour
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
         if (prefab == null || spawnPoint == null) return null;
 
+        Debug.Log($"VVR_DIAG spawn begin wave={currentWave} point={spawnPoint.name} t={Time.realtimeSinceStartup:F2}");
         GameObject spawned = Instantiate(prefab, spawnPoint.position, spawnPoint.rotation);
+        Debug.Log($"VVR_DIAG spawn instantiated t={Time.realtimeSinceStartup:F2}");
         enemiesAlive++;
         UpdateUI();
         return spawned;
